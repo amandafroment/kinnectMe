@@ -1,3 +1,3 @@
-# MERN-Stack Infrastructure
+# Project4
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+Unit 4 Project!
