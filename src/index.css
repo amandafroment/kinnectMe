@@ -8,6 +8,7 @@ body {
   background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
+  background-color: rgb(92, 146, 92);
 }
 
 #root {
@@ -96,7 +97,7 @@ input:focus {
   border-color: var(--orange);
 }
 
-button,
+/* button,
 a.button {
   margin: 1vmin;
   padding: 1vmin;
@@ -120,7 +121,7 @@ button.btn-sm {
 button.btn-xs {
   font-size: 1vmin;
   padding: 0.4vmin 0.5vmin;
-}
+} */
 
 button:disabled,
 form:invalid button[type="submit"] {

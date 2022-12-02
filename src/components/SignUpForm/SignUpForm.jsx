@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { signUp } from "../../utilities/users-service";
+import "./SignUpForm.css";
 
 export class SignUpForm extends Component {
   state = {
@@ -73,7 +74,7 @@ export class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <button type="submit" disabled={disable}>
+            <button type="submit" disabled={disable} className="signupbtn">
               SIGN UP
             </button>
           </form>
