@@ -19,7 +19,7 @@ export default function NavBar({ user, setUser }) {
       {user && <span>Welcome, {user.name}</span>}
       &nbsp;{" "}
       <Link to="" onClick={handleLogOut}>
-        Log Out
+        <span class="material-symbols-outlined">logout</span>
       </Link>
     </nav>
   );

@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const eventsRouter = require("./routes/events.js");
 
 require("dotenv").config();
 require("./config/database");
@@ -16,8 +17,10 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
 app.use(require("./config/checkToken"));
-
+app.use("/events", eventsRouter);
 app.use("/api/users", require("./routes/api/users"));
+
+const ensureLoggedIn = require("./config/ensureLoggedIn");
 
 app.get("/*", function (req, res) {
   // currentdirectory/build/index.html
