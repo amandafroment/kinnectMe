@@ -40,4 +40,8 @@ const eventSchema = new Schema(
   }
 );
 
+// Static method to get the Event model? Once created?
+
+// Instance method to add an event?
+
 module.exports = mongoose.model("Event", eventSchema);

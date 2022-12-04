@@ -2,15 +2,20 @@ const express = require("express");
 const router = express.Router();
 const eventsCtrl = require("../../controllers/api/events");
 
-// create event
+// create events
+// router.post("/create", eventsCtrl.createEvent);
 
-// show events router
+// GET / api  all events
+// router.get("/events", eventsCtrl.getAll);
 
 // edit
 // router.post('/event/')
+
 // delete
 
-// event details page
+//  POST / event details page
+// router.post("/events/detail", eventsCtrl.eventDetail);
+
 // comment create
 
 module.exports = router;
