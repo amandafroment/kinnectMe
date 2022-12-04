@@ -21,7 +21,8 @@ export default function LandingPage() {
 
   return (
     <>
-      <h1>{events}</h1>
+      {/* <h1>{events}</h1> */}
+      <h2>Landing Page</h2>
     </>
   );
 }

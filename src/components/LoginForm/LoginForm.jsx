@@ -32,7 +32,7 @@ export default function LoginForm({ setUser }) {
   return (
     <div>
       <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete="off" onSubmit={handleSubmit} className="login-form">
           <label>Email</label>
           <input
             type="text"

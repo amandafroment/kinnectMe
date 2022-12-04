@@ -9,16 +9,29 @@ export default function EventForm({ selectedCategory, handleAddEvent }) {
     handleAddEvent(formData);
   }
 
-  function handleSelectedCategory() {
+  function handleSelectedCategoryBorder() {
     switch (selectedCategory) {
       case "Dog Meetups":
-        return "solid 2px blue";
+        return "solid 2px #CCD2C7";
       case "Restaurant Crawl":
-        return "solid 2px green";
+        return "solid 2px #BBC3B4";
       case "All Things Fitness":
-        return "solid 2px yellow";
+        return "solid 2px #999F94";
       case "A Different Event":
-        return "solid 2px pink";
+        return "solid 2px #889081";
+    }
+  }
+
+  function handleSelectedCategoryColor() {
+    switch (selectedCategory) {
+      case "Dog Meetups":
+        return "#CCD2C7";
+      case "Restaurant Crawl":
+        return "#BBC3B4";
+      case "All Things Fitness":
+        return "#999F94";
+      case "A Different Event":
+        return "#889081";
     }
   }
 
@@ -29,7 +42,8 @@ export default function EventForm({ selectedCategory, handleAddEvent }) {
         <form
           onSubmit={handleSubmitForm}
           style={{
-            border: handleSelectedCategory(),
+            border: handleSelectedCategoryBorder(),
+            backgroundColor: handleSelectedCategoryColor(),
           }}
         >
           <label>Name Of Event</label>
