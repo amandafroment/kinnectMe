@@ -14,7 +14,7 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to="/newpage">New Page</Link>
       &nbsp; | &nbsp;
-      <Link to="/newpage/details">New Page Details</Link>
+      <Link to="/searchevents">Find Events</Link>
       &nbsp; | &nbsp;
       {user && <span>Welcome, {user.name}</span>}
       &nbsp;{" "}
