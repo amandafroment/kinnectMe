@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/newpage">New Page</Link>
+      <Link to="/createevent">Create Event</Link>
       &nbsp; | &nbsp;
       <Link to="/searchevents">Find Events</Link>
       &nbsp; | &nbsp;

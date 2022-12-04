@@ -26,7 +26,7 @@ export default function App() {
               {/* // Route
               is always going to expect a path and an element(as the prop to
               pass down information) as the naming conventions */}
-              <Route path="/newpage" element={<CreateEventPage />} />
+              <Route path="/createevent" element={<CreateEventPage />} />
               <Route path="/searchevents" element={<SearchEventPage />} />
             </Routes>
           </>
