@@ -7,6 +7,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import LandingPage from "../LandingPage/LandingPage";
 import NewPage from "../NewPage/NewPage";
 import NewPageDetails from "../NewPageDetails/NewPageDetails";
+import SearchEventPage from "../SearchEventsPage/SearchEventsPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -26,6 +27,7 @@ export default function App() {
               is always going to expect a path and an element(as the prop to
               pass down information) as the naming conventions */}
               <Route path="/newpage" element={<NewPage />} />
+              <Route path="/searchevents" element={<SearchEventPage />} />
             </Routes>
           </>
         ) : (
