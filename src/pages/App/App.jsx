@@ -22,7 +22,7 @@ export default function App() {
               <Route path="/" element={<LandingPage />} />
               {/* // routes is another component that allows us to set up all of our
               different routes, it is a package built into react-router */}
-              <Route path="/orders/new" element={<EventDetailsPage />} />
+              <Route path="/eventsdetails" element={<EventDetailsPage />} />
               {/* // Route
               is always going to expect a path and an element(as the prop to
               pass down information) as the naming conventions */}
