@@ -1,12 +1,7 @@
 import { useState } from "react";
 import "./EventForm.css";
 
-export default function EventForm({
-  selectedCategory,
-  setSelectedCategory,
-  handleSelectedCategory,
-  handleAddEvent,
-}) {
+export default function EventForm({ selectedCategory, handleAddEvent }) {
   const [formData, setFormData] = useState("");
 
   function handleSubmitForm(evt) {
@@ -14,20 +9,17 @@ export default function EventForm({
     handleAddEvent(formData);
   }
 
-  function handleSelectedCategory(e) {
+  function handleSelectedCategory() {
     switch (selectedCategory) {
       case "Dog Meetups":
-        e.target.style.border = "blue";
-        break;
+        return "solid 2px blue";
       case "Restaurant Crawl":
-        e.target.style.border = "blue";
+        return "solid 2px green";
       case "All Things Fitness":
-        e.target.style.border = "yellow";
+        return "solid 2px yellow";
       case "A Different Event":
-        e.target.style.border = "pink";
+        return "solid 2px pink";
     }
-    setSelectedCategory(e.target.value);
-    console.log(e.target.value, "value");
   }
 
   return (
@@ -37,15 +29,7 @@ export default function EventForm({
         <form
           onSubmit={handleSubmitForm}
           style={{
-            border:
-              selectedCategory === "Dog Meetups"
-                ? "solid 2px blue"
-                : "solid 2px black" || selectedCategory === "Restaurant Crawl"
-                ? "solid 2px pink"
-                : "solid 2px black",
-            // || selectedCategory === "All Things Fitness"
-            // ? "solid 2px red"
-            // : "solid 2px black",
+            border: handleSelectedCategory(),
           }}
         >
           <label>Name Of Event</label>
