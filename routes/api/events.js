@@ -6,12 +6,13 @@ const eventsCtrl = require("../../controllers/api/events");
 // please remember BASE_URL in events-api is "api/events";
 
 // // POST /api/events/create
+router.get("/", eventsCtrl.getAllEvents);
 router.post("/create", eventsCtrl.createEvent);
 
 // // POST /api/events/comment
 // router.post("/comment", eventsCtrl.createComment);
 
-// // GET /api/events
+// GET /api/events
 // router.get("/", eventsCtrl.getAll);
 // // GET /api/events/detail
 // router.get("/detail", eventsCtrl.eventDetail);

@@ -1,0 +1,18 @@
+.find-events-list {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  justify-items: center;
+  align-items: center; */
+  gap: 20px;
+}
+.find-event-card {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: ; */
+  justify-content: center;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 50%;
+}
