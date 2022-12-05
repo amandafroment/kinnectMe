@@ -1,4 +1,5 @@
 const Event = require("../../models/event");
+const User = require("../../models/user");
 
 // get all events that are created
 async function getAll(req, res) {
@@ -10,19 +11,35 @@ async function getAll(req, res) {
     }
   });
 }
+// users past and future events
+async function getAllForUser(req, res) {
+  const events = Event.find({ user: req.user._id }).sort();
+}
+res.json(events);
 
-//create
+//create event
 async function createEvent(req, res) {
-  // await
+  req.body.user = req.body._id;
+  const newEvent = await Event.create(req.body);
+  res.json(newEvent);
 }
 
-//
-async function setEvent(req, res) {}
+//create comment
 
 //edit event
-async function editEvent(req, res) {}
+// async function updateEvent(req, res) {}
+
+//edit comment
+// async function updateComment(req, res) {}
 
 //delete event
-async function deleteEvent(req, res) {}
+// async function deleteEvent(req, res) {}
 
-module.exports = {};
+//delete comment
+// async function deleteComment(req, res) {}
+
+module.exports = {
+  getAll,
+  getAllForUser,
+  createEvent,
+};

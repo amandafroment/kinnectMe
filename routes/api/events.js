@@ -2,20 +2,27 @@ const express = require("express");
 const router = express.Router();
 const eventsCtrl = require("../../controllers/api/events");
 
-// create events
-// router.post("/create", eventsCtrl.createEvent);
+// BEFORE CHANGING THIS:
+// please remember BASE_URL in events-api is "api/events";
 
-// GET / api  all events
-// router.get("/events", eventsCtrl.getAll);
+// POST /api/events/create
+router.post("/create", eventsCtrl.createEvent);
+// POST /api/events/comment
+router.post("/comment", eventsCtrl.createComment);
 
-// edit
-// router.post('/event/')
+// GET /api/events
+router.get("/", eventsCtrl.getAll);
+// GET /api/events/detail
+router.get("/detail", eventsCtrl.eventDetail);
 
-// delete
+// EDIT /api/events/:id
+router.put("/:id", eventsCtrl.updateEvent);
+// EDIT /api/events/comments/:id
+router.put("/comment/:id", eventsCtrl.updateComment);
 
-//  POST / event details page
-// router.post("/events/detail", eventsCtrl.eventDetail);
-
-// comment create
+// DELETE /api/events/:id
+router.delete("/:id", eventsCtrl.deleteEvent);
+// DELETE /api/events/comments/:id
+router.delete("/comment/:id", eventsCtrl.deleteComment);
 
 module.exports = router;

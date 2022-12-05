@@ -1,0 +1,21 @@
+.NavBarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px rgb(170, 180, 161) solid;
+  height: 50px;
+}
+
+.logo {
+  margin-top: 7px;
+}
+
+.links {
+  color: rgb(170, 180, 161);
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.links:hover {
+  color: #889081;
+}
