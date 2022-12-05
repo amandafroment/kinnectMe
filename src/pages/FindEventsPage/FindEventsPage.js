@@ -2,6 +2,7 @@ import FindEventButtons from "../../components/FindEventButtons/FindEventButtons
 import GenerateEvents from "../../components/GenerateEvents/GenerateEvents";
 import * as eventsAPI from "../../utilities/events-api";
 import { useEffect, useState } from "react";
+import "./FindEventsPage.css";
 
 export default function FindEventsPage() {
   const [showAllEvents, setShowAllEvents] = useState([]);
@@ -17,7 +18,7 @@ export default function FindEventsPage() {
 
   return (
     <>
-      <div>
+      <div className="FindEventsPage">
         <h1>KinnectMe with...</h1>
         <FindEventButtons />
         <GenerateEvents
