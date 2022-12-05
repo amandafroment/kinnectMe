@@ -23,7 +23,7 @@ export default function NavBar({ user, setUser }) {
           Create Event
         </Link>
 
-        <Link to="/searchevents" className="links">
+        <Link to="/findevents" className="links">
           Find Events
         </Link>
 
