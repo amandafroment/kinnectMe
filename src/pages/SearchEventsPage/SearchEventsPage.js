@@ -11,6 +11,7 @@ export default function SearchEventPage() {
     <>
       <div>
         <h1>KinnectMe with...</h1>
+        <FindEventButtons />
       </div>
     </>
   );
