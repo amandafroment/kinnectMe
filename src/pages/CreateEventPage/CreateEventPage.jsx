@@ -1,7 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import CategoryButtons from "../../components/CategoryButtons/CategoryButtons";
-import EventForm from "../../components/EventForm/EventForm";
 import "./CreateEventPage.css";
 
 export default function CreateEventPage() {

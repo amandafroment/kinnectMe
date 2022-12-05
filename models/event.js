@@ -28,7 +28,7 @@ const eventSchema = new Schema(
     category: String,
     details: String,
     attendees: Number,
-    comments: [commentSchema],
+    comment: [commentSchema],
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -41,7 +41,23 @@ const eventSchema = new Schema(
 );
 
 // Static method to get the Event model? Once created?
+// eventSchema.statics.getCommentsBoard = function()
 
 // Instance method to add an event?
+eventSchema.methods.addEvent = function(eventId) {
+  
+}
+
+// Instance method to add an comment?
+// Needs work!
+// eventSchema.methods.addCommentToEvent = async function (commentId) {
+//   const commentsBoard = this;
+//   const comment = await Comment.findById(commentId);
+//   const newComment = { comment };
+//   commentsBoard.comment.push(newComment);
+//   // return the save() method's promise
+//   // Return the promise that's returned by the save method
+//   return commentsBoard.save();
+// };
 
 module.exports = mongoose.model("Event", eventSchema);
