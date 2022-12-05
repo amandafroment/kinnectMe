@@ -15,7 +15,7 @@ export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
 
   return (
     <>
-      <div>
+      <div className="find-events-list">
         <h1>Find an Event</h1>
         <div>
           {showAllEvents.map((event) => {
