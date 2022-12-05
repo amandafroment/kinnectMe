@@ -6,7 +6,8 @@ const eventsCtrl = require("../../controllers/api/events");
 // please remember BASE_URL in events-api is "api/events";
 
 // // POST /api/events/create
-// router.post("/create", eventsCtrl.createEvent);
+router.post("/create", eventsCtrl.createEvent);
+
 // // POST /api/events/comment
 // router.post("/comment", eventsCtrl.createComment);
 
@@ -25,4 +26,4 @@ const eventsCtrl = require("../../controllers/api/events");
 // // DELETE /api/events/comments/:id
 // router.delete("/comment/:id", eventsCtrl.deleteComment);
 
-// module.exports = router;
+module.exports = router;

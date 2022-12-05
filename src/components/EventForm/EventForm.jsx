@@ -1,12 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./EventForm.css";
+import * as eventsAPI from "../../utilities/events-api";
 
-export default function EventForm({ selectedCategory, handleAddEvent }) {
-  const [formData, setFormData] = useState("");
+export default function EventForm({ selectedCategory }) {
+  // const todayDate = new Date();
+  // const formatDate =
+  //   todayDate.getDate() < 10 ? `0${todayDate.getDate()}` : todayDate.getDate();
+  // const formatMonth =
+  //   todayDate.getMonth() < 10
+  //     ? `0${todayDate.getMonth()}`
+  //     : todayDate.getMonth();
+  // const formattedDate = [todayDate.getFullYear(), formatMonth, formatDate].join(
+  //   "-"
+  // );
 
-  function handleSubmitForm(evt) {
-    evt.peventDefault();
-    handleAddEvent(formData);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    date: new Date(),
+    location: "",
+    address: "",
+    details: "",
+    category: selectedCategory,
+  });
+
+  useEffect(function () {
+    setFormData.category = selectedCategory;
+  }, []);
+
+  function handleChangeForm(evt) {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value });
+    setError("");
+  }
+
+  async function handleSubmitForm(evt) {
+    evt.preventDefault();
+    try {
+      let event = await eventsAPI.createAddEvent(formData);
+      setFormData(formData);
+    } catch (err) {
+      console.log(err);
+      setError("Create Event Failed - Try Again");
+    }
   }
 
   function handleSelectedCategoryBorder() {
@@ -47,15 +82,45 @@ export default function EventForm({ selectedCategory, handleAddEvent }) {
           }}
         >
           <label>Name Of Event</label>
-          <input type="text" />
-          <label>Date:</label>
-          <input type="text" />
+          <input
+            type="text"
+            value={formData.name}
+            name="name"
+            required
+            onChange={handleChangeForm}
+          />
+          <label>Date & Time:</label>
+          <input
+            type="datetime-local"
+            value={formData.date}
+            name="date"
+            required
+            onChange={handleChangeForm}
+          />
           <label>Name of Location:</label>
-          <input type="text" />
+          <input
+            type="text"
+            value={formData.location}
+            name="location"
+            required
+            onChange={handleChangeForm}
+          />
           <label>Address:</label>
-          <input type="text" />
+          <input
+            type="text"
+            value={formData.address}
+            name="address"
+            required
+            onChange={handleChangeForm}
+          />
           <label>Details:</label>
-          <input type="text" />
+          <input
+            type="text"
+            value={formData.details}
+            name="details"
+            required
+            onChange={handleChangeForm}
+          />
           <button type="submit">Create My Event</button>
         </form>
       </div>
