@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "build")));
 app.use(require("./config/checkToken"));
 app.use("/events", eventsRouter);
 app.use("/api/users", require("./routes/api/users"));
-app.use("/api/events", require("./routes/api/events"));
+// app.use("/api/events", require("./routes/api/events"));
 
 const ensureLoggedIn = require("./config/ensureLoggedIn");
 
