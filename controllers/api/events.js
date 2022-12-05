@@ -18,11 +18,11 @@ const User = require("../../models/user");
 // res.json(events);
 
 // //create event
-// async function createEvent(req, res) {
-//   req.body.user = req.body._id;
-//   const newEvent = await Event.create(req.body);
-//   res.json(newEvent);
-// }
+async function createEvent(req, res) {
+  req.body.user = req.user._id;
+  const event = await Event.create(req.body);
+  res.json(event);
+}
 
 // //create comment
 
@@ -38,8 +38,8 @@ const User = require("../../models/user");
 // //delete comment
 // // async function deleteComment(req, res) {}
 
-// module.exports = {
-//   getAll,
-//   getAllForUser,
-//   createEvent,
-// };
+module.exports = {
+  //   getAll,
+  //   getAllForUser,
+  createEvent,
+};

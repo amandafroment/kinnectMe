@@ -6,6 +6,7 @@ async function create(req, res) {
   try {
     // Add the user to the database
     const user = await User.create(req.body);
+
     // token will be a string
     const token = createJWT(user);
     // Yes, we can use res.json to send back just a string

@@ -32,6 +32,7 @@ const eventSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      require,
     },
   },
   {
@@ -44,9 +45,9 @@ const eventSchema = new Schema(
 // eventSchema.statics.getCommentsBoard = function()
 
 // Instance method to add an event?
-eventSchema.methods.addEvent = function(eventId) {
-  
-}
+// eventSchema.methods.addAttendee = async function(usertId) {
+//   const event =
+// }
 
 // Instance method to add an comment?
 // Needs work!

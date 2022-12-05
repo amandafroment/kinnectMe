@@ -1,6 +1,6 @@
-// import sendRequest from "./send-request";
+import sendRequest from "./send-request";
 
-// const BASE_URL = "api/events";
+const BASE_URL = "/api/events";
 
 // this needs to gete all future events, not past events
 // past events should show on the users page
@@ -12,9 +12,10 @@
 //   return sendRequest(`${BASE_URL}/${id}`);
 // }
 
-// export function createEvent(formData) {
-//   return sendRequest(BASE_URL, "POST", formData);
-// }
+// needs to match the events router
+export function createAddEvent(formData) {
+  return sendRequest(`${BASE_URL}/create`, "POST", formData);
+}
 
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);
