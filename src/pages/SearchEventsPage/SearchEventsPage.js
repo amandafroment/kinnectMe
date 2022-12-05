@@ -1,3 +1,5 @@
+import FindEventButtons from "../../components/FindEventButtons/FindEventButtons";
+
 export default function SearchEventPage() {
   // is the handleAddEvent
   // async function handleAddEvent(formData) {
@@ -7,7 +9,9 @@ export default function SearchEventPage() {
 
   return (
     <>
-      <h1>SearchEventPage</h1>
+      <div>
+        <h1>KinnectMe with...</h1>
+      </div>
     </>
   );
 }
