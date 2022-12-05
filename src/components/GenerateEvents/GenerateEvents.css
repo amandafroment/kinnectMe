@@ -1,0 +1,19 @@
+.find-events-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.find-event-card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 50%;
+}
+.event-card-title {
+  font-weight: bold;
+}
