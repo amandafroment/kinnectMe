@@ -5,7 +5,7 @@ const BASE_URL = "/api/events";
 // this needs to gete all future events, not past events
 // past events should show on the users page
 // export function getAll() {
-//   return sendRequest(BASE_URL);
+//   return sendRequest(`${BASE_URL}`);
 // }
 
 // export function getEventDetail() {
@@ -15,6 +15,10 @@ const BASE_URL = "/api/events";
 // needs to match the events router
 export function createAddEvent(formData) {
   return sendRequest(`${BASE_URL}/create`, "POST", formData);
+}
+
+export function getAllEvents(formData) {
+  return sendRequest(BASE_URL);
 }
 
 // export function getCommentById() {
@@ -35,9 +39,6 @@ export function createAddEvent(formData) {
 // }
 
 // needs user's events components
-// export function getAllForUser() {
-//   return sendRequest(`${BASE_URL}/user`);
-// }
 // export function getAllForUser() {
 //   return sendRequest(`${BASE_URL}/user`);
 // }

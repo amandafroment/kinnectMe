@@ -1,0 +1,6 @@
+.find-event-card {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 50%;
+}
