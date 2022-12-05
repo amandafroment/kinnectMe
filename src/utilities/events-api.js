@@ -1,6 +1,6 @@
-import sendRequest from "./send-request";
+// import sendRequest from "./send-request";
 
-const BASE_URL = "api/events";
+// const BASE_URL = "api/events";
 
 // this needs to gete all future events, not past events
 // past events should show on the users page
@@ -36,4 +36,20 @@ export function updateComment(commentId, editedComment) {
 // needs user's events components
 // export function getAllForUser() {
 //   return sendRequest(`${BASE_URL}/user`);
+// }
+// export function getAllForUser() {
+//   return sendRequest(`${BASE_URL}/user`);
+// }
+
+// export function createEvent(formData)
+//     return sendRequest(BASE_URL, 'POST', formData);
+
+// export function getById(id) {
+//   return sendRequest(`${BASE_URL}/${id}`);
+// }
+
+// // this needs work - passing in 'editedData' and eventId
+// // would it be formData?
+// export function editEvent(eventId, editedData) {
+//   return sendRequest(`${BASE_URL}/${id}/edit`, PUT, { eventId, editedData});
 // }

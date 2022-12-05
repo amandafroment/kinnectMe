@@ -2,9 +2,25 @@ import React from "react";
 import "./CreateEventPage.css";
 
 export default function CreateEventPage() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   return (
     <>
-      <h1>Create An Event</h1>
+      <main className="CreateEventPage">
+        <h1>KinnectMe with...</h1>
+        <CategoryButtons
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+        {selectedCategory === "" ? (
+          <h2>Click a category to start your event planning!</h2>
+        ) : (
+          <EventForm
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        )}
+      </main>
     </>
   );
 }
