@@ -39,6 +39,10 @@ export default function GenerateEvents({
                   {event.details}
                 </p>
                 <p>
+                  <span className="bold-header">Category:</span>{" "}
+                  {event.category}
+                </p>
+                <p>
                   <button onClick={() => handleDelete(event._id)}>X</button>
                 </p>
               </div>
