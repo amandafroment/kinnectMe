@@ -10,7 +10,7 @@ export default function FindEventButtons({ selectedEvent, setSelectedEvent }) {
           value="Dog Meetups"
           onClick={() => setSelectedEvent("Dog Meetups")}
         >
-          Dog Group Meetups
+          Dog Meetups
         </button>
         <button
           className="restaurant-crawl"

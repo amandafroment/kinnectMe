@@ -102,7 +102,7 @@ export default function EventForm({ selectedCategory }) {
             name="location"
             required
             onChange={handleChangeForm}
-            placeholder="Where are you meeting?"
+            placeholder="Where is everyone meeting?"
           />
           <label>Address</label>
           <input

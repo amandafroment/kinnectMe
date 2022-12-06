@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
-import axios from "axios";
 import "./GenerateEvents.css";
+import axios from "axios";
 
 export default function GenerateEvents({
   showAllEvents,
