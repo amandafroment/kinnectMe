@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./EventForm.css";
 import * as eventsAPI from "../../utilities/events-api";
 
@@ -27,6 +28,12 @@ export default function EventForm({ selectedCategory }) {
   useEffect(function () {
     setFormData.category = selectedCategory;
   }, []);
+
+  const navigate = useNavigate();
+
+  const navigateToHome = () => {
+    navigate("/");
+  };
 
   function handleChangeForm(evt) {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -121,7 +128,9 @@ export default function EventForm({ selectedCategory }) {
             required
             onChange={handleChangeForm}
           />
-          <button type="submit">Create My Event</button>
+          <button type="submit" onClick={navigateToHome}>
+            Create My Event
+          </button>
         </form>
       </div>
     </>
