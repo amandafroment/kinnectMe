@@ -8,6 +8,14 @@ export default function GenerateEvents({
   setShowAllEvents,
   selectedEvent,
 }) {
+  // function attendingButton(eventId) {
+  //   console.log("test");
+  //   console.log(eventId);
+  //   eventsAPI.eventAddAttendee(eventId);
+  // }
+
+  //   const [showAttending, setShowAttending] = useState("");
+
   return (
     <>
       <div className="find-events-list">
@@ -31,6 +39,14 @@ export default function GenerateEvents({
                   <span className="bold-header">All The Details: </span>
                   {event.details}
                 </p>
+                {/* <div>
+                  <span
+                    class="material-symbols-outlined"
+                    onClick={() => attendingButton(event._id)}
+                  >
+                    person_add
+                  </span>
+                </div> */}
               </div>
             );
           })}
