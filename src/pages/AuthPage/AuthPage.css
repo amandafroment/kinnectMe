@@ -34,3 +34,9 @@
   font-family: "Shadows Into Light";
   font-size: 22px;
 }
+
+.auth-form-page-container {
+  background-color: green;
+  margin: 0;
+  width: 50%;
+}

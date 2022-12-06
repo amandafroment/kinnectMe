@@ -1,18 +1,15 @@
-.loginbtn {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  cursor: pointer;
-}
-
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
+}
+
+.loginbtn {
+  cursor: pointer;
 }
