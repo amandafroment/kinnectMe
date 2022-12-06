@@ -1,1 +1,27 @@
+.CategoryButtonContainer > button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+  cursor: pointer;
+}
 
+.CategoryButtonContainer > button:hover {
+  transform: scale(1.1);
+}
+
+.dog-meetups {
+  border: 3px solid #ccd2c7;
+}
+
+.restaurant-crawl {
+  border: 3px solid #bbc3b4;
+}
+
+.fitness {
+  border: 3px solid #999f94;
+}
+
+.different-event {
+  border: 3px solid #889081;
+}

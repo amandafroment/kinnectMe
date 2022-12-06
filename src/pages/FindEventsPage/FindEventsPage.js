@@ -6,6 +6,7 @@ import "./FindEventsPage.css";
 
 export default function FindEventsPage() {
   const [showAllEvents, setShowAllEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState("");
 
   useEffect(function () {
     async function getEvents() {
@@ -22,10 +23,15 @@ export default function FindEventsPage() {
         <div className="find-events-page-header">
           <h1>KinnectMe with...</h1>
         </div>
-        <FindEventButtons />
+        <FindEventButtons
+          selectedEvent={selectedEvent}
+          setSelectedEvent={setSelectedEvent}
+        />
         <GenerateEvents
           showAllEvents={showAllEvents}
           setShowAllEvents={setShowAllEvents}
+          selectedEvent={selectedEvent}
+          setSelectedEvent={setSelectedEvent}
         />
       </div>
     </>
