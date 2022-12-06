@@ -27,7 +27,6 @@ async function createEvent(req, res) {
 
 async function deleteEvent(req, res) {
   await Event.findByIdAndDelete(req.params.id);
-  res.send(200).json("Done");
 }
 //
 
