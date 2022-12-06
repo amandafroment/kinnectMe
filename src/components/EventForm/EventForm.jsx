@@ -65,7 +65,10 @@ export default function EventForm({ selectedCategory }) {
 
   return (
     <>
-      <h1>{selectedCategory}</h1>
+      <div className="SelectedEventsHeaderContainer">
+        <h1>{selectedCategory}</h1>
+      </div>
+
       <div className="EventFormDivContainer">
         <form
           onSubmit={handleSubmitForm}
@@ -73,6 +76,7 @@ export default function EventForm({ selectedCategory }) {
             border: handleSelectedCategoryBorder(),
             backgroundColor: handleSelectedCategoryColor(),
           }}
+          className="EventForm"
         >
           <label>Name Of Event</label>
           <input
@@ -82,37 +86,42 @@ export default function EventForm({ selectedCategory }) {
             required
             onChange={handleChangeForm}
           />
-          <label>Date & Time:</label>
+          <label>Date & Time</label>
           <input
             type="datetime-local"
             value={formData.date}
             name="date"
             required
             onChange={handleChangeForm}
+            className="date-and-time-input"
           />
-          <label>Name of Location:</label>
+          <label>Name of Location</label>
           <input
             type="text"
             value={formData.location}
             name="location"
             required
             onChange={handleChangeForm}
+            placeholder="Where are you meeting?"
           />
-          <label>Address:</label>
+          <label>Address</label>
           <input
             type="text"
             value={formData.address}
             name="address"
             required
             onChange={handleChangeForm}
+            placeholder="Street, City, Postal Code..."
           />
-          <label>Details:</label>
+          <label>Details</label>
           <input
             type="text"
             value={formData.details}
             name="details"
             required
             onChange={handleChangeForm}
+            placeholder="Tell us more about your event..."
+            className="details-input"
           />
           <button type="submit">Create My Event</button>
         </form>

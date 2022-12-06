@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .FindEventsPage {
   width: 100%;
   display: flex;
@@ -8,4 +11,7 @@
 
 .find-events-page-header {
   margin-top: 5%;
+  font-family: "Shadows Into Light";
+  font-size: 20px;
+  color: #5c6453;
 }

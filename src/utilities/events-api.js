@@ -21,6 +21,11 @@ export function getAllEvents(formData) {
   return sendRequest(BASE_URL);
 }
 
+// export function eventAddAttendee(event) {
+//   console.log("event", event);
+//   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
+// }
+
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);
 // }

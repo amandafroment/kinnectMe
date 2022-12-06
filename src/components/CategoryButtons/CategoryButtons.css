@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .CategoryButtonContainer > button {
   padding: 10px;
   border-radius: 5px;
@@ -6,6 +9,8 @@
   cursor: pointer;
   font-weight: 600;
   color: #5c6453;
+  font-family: Mulish;
+  font-size: 16px;
 }
 
 .CategoryButtonContainer > button:hover {
