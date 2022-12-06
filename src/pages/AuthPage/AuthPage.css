@@ -17,13 +17,20 @@
 
 .changing-sign-in-button {
   padding: 0px 15px;
-  border: 2px solid #5c6453;
+  border: 2px solid #bbc3b4;
   border-radius: 15px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .changing-sign-in-button > h3 {
   margin: 5px;
+  color: #9aa590;
+}
+
+.changing-sign-in-button > h3:hover {
+  margin: 5px;
+  color: #5c6453;
 }
 
 .introduction-paragraphs {
@@ -36,7 +43,6 @@
 }
 
 .auth-form-page-container {
-  background-color: green;
   margin: 0;
   width: 50%;
 }
