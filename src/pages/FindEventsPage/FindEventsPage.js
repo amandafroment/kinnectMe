@@ -19,7 +19,9 @@ export default function FindEventsPage() {
   return (
     <>
       <div className="FindEventsPage">
-        <h1>KinnectMe with...</h1>
+        <div className="find-events-page-header">
+          <h1>KinnectMe with...</h1>
+        </div>
         <FindEventButtons />
         <GenerateEvents
           showAllEvents={showAllEvents}
