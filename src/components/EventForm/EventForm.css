@@ -1,14 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
+.SelectedEventsHeaderContainer {
+  margin-bottom: 15px;
+}
+
+.SelectedEventsHeaderContainer > h1 {
+  font-family: Mulish;
+}
+
 .EventFormDivContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 50%;
 }
 
-.EventFormDivContainer > form {
+.EventForm {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  border: black solid 2px;
-  padding: 25px;
+  padding: 40px;
+  border-radius: 25px;
+  color: #5c6453;
+}
+
+.EventForm > label {
+  font-size: 18px;
+  margin: 15px 0px;
+  font-weight: bold;
+}
+
+.EventForm > input {
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px white;
+}
+
+.details-input {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.EventForm > button {
+  margin-top: 25px;
+  width: 150;
+  padding: 15px;
+  align-self: center;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  color: #5c6453;
+}
+
+.EventForm > button:hover {
+  background-color: white;
+  color: rgb(170, 180, 161);
 }

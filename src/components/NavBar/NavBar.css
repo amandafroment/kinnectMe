@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .NavBarContainer {
   display: flex;
   flex-direction: row;
@@ -7,16 +10,19 @@
   width: 97%;
 }
 
-.logo {
-  margin-top: 7px;
-}
-
 .links {
   color: rgb(170, 180, 161);
   text-decoration: none;
   margin-right: 15px;
+  font-family: Mulish;
 }
 
 .links:hover {
   color: #889081;
+}
+
+.logo {
+  margin-top: 7px;
+  font-family: "Shadows Into Light";
+  font-size: 20px;
 }
