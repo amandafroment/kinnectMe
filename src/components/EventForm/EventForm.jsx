@@ -4,17 +4,6 @@ import "./EventForm.css";
 import * as eventsAPI from "../../utilities/events-api";
 
 export default function EventForm({ selectedCategory }) {
-  // const todayDate = new Date();
-  // const formatDate =
-  //   todayDate.getDate() < 10 ? `0${todayDate.getDate()}` : todayDate.getDate();
-  // const formatMonth =
-  //   todayDate.getMonth() < 10
-  //     ? `0${todayDate.getMonth()}`
-  //     : todayDate.getMonth();
-  // const formattedDate = [todayDate.getFullYear(), formatMonth, formatDate].join(
-  //   "-"
-  // );
-
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
