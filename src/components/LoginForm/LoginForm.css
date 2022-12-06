@@ -10,6 +10,19 @@
   flex-direction: column;
 }
 
-.loginbtn {
+.login-form > .loginbtn {
+  color: #9aa590;
+  padding: 5px 5px;
+  border: 2px solid #bbc3b4;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 75%;
+  align-self: center;
+  margin: 15px;
+}
+
+.login-form > .loginbtn:hover {
+  color: #5c6453;
   cursor: pointer;
 }
