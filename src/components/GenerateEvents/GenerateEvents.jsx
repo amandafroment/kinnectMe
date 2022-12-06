@@ -21,7 +21,7 @@ export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
           {showAllEvents.map((event) => {
             return (
               <div className="find-event-card">
-                <div>{event.name}</div>
+                <div className="event-card-title ">{event.name}</div>
                 <div>{event.date}</div>
                 <div>{event.location}</div>
                 <div>{event.address}</div>
