@@ -3,16 +3,11 @@ import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 
-export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
-  //   useEffect(function () {
-  //     async function getEvents() {
-  //       let events = await eventsAPI.generateEvents();
-  //       setShowEvents(events);
-  //       console.log(events, "events");
-  //     }
-  //     getEvents();
-  //   }, []);
-
+export default function GenerateEvents({
+  showAllEvents,
+  setShowAllEvents,
+  selectedEvent,
+}) {
   return (
     <>
       <div className="find-events-list">

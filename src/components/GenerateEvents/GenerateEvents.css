@@ -1,7 +1,7 @@
 .find-events-list {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 55%;
   margin-top: 25px;
 }
 
@@ -13,6 +13,15 @@
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
+  color: #5c6453;
+}
+
+.find-event-card > p {
+  margin: 7.5px;
+}
+
+.find-event-card > h2 {
+  margin: 10px;
 }
 
 .bold-header {

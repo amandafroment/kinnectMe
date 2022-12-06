@@ -3,3 +3,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.create-events-page-header {
+  margin-top: 5%;
+}
