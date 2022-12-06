@@ -4,6 +4,8 @@
   margin: 10px;
   background-color: white;
   cursor: pointer;
+  font-weight: 600;
+  color: #5c6453;
 }
 
 .FindEventsButtonContainer > button:hover {

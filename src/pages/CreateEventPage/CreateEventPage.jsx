@@ -10,7 +10,9 @@ export default function CreateEventPage() {
   return (
     <>
       <main className="CreateEventPage">
-        <h1>KinnectMe with...</h1>
+        <div className="create-events-page-header">
+          <h1>KinnectMe with...</h1>
+        </div>
         <CategoryButtons
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
