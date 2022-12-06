@@ -23,8 +23,8 @@ export default function NavBar({ user, setUser }) {
           Create Event
         </Link>
 
-        <Link to="/findevents" className="links">
-          Find Events
+        <Link to="/myevents" className="links">
+          My Events
         </Link>
 
         {user && <span className="links">Welcome, {user.name}</span>}

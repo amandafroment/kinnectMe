@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import * as eventsAPI from "../../utilities/events-api";
 
-export default function LandingPage() {
+export default function MyEvents() {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -15,7 +15,6 @@ export default function LandingPage() {
 
   return (
     <>
-      {/* <h1>{events}</h1> */}
       <h2>Landing Page</h2>
     </>
   );

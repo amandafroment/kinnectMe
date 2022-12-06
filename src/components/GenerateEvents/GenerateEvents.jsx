@@ -16,15 +16,26 @@ export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
   return (
     <>
       <div className="find-events-list">
-        <h1>Find an Event</h1>
         <div>
           {showAllEvents.map((event) => {
             return (
               <div className="find-event-card">
-                <div>{event.name}</div>
-                <div>{event.date}</div>
-                <div>{event.location}</div>
-                <div>{event.address}</div>
+                <h2 className="bold-header">{event.name.toUpperCase()}</h2>
+                <p>
+                  <span className="bold-header">Time & Place:</span>{" "}
+                  {event.date}
+                </p>
+                <p>
+                  <span className="bold-header">Location:</span>{" "}
+                  {event.location}
+                </p>
+                <p>
+                  <span className="bold-header">Address:</span> {event.address}
+                </p>
+                <p>
+                  <span className="bold-header">All The Details: </span>
+                  {event.details}
+                </p>
               </div>
             );
           })}

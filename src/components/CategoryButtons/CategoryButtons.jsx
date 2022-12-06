@@ -12,7 +12,7 @@ export default function CategoryButtons({
           value="Dog Meetups"
           onClick={() => setSelectedCategory("Dog Meetups")}
         >
-          Dog Meetups
+          Dog Group Meetups
         </button>
         <button
           value="Restaurant Crawl"
