@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
+import axios from "axios";
 import "./GenerateEvents.css";
 
 export default function GenerateEvents({
@@ -8,14 +9,12 @@ export default function GenerateEvents({
   setShowAllEvents,
   selectedEvent,
 }) {
-  // function attendingButton(eventId) {
-  //   console.log("test");
-  //   console.log(eventId);
-  //   eventsAPI.eventAddAttendee(eventId);
-  // }
-
-  //   const [showAttending, setShowAttending] = useState("");
-
+  function handleDelete(id) {
+    console.log("Delete clicked!");
+    setShowAllEvents(showAllEvents.filter((event) => event.id !== id));
+    axios.delete(`/api/events/${id}`);
+    console.log("Delete finished!");
+  }
   return (
     <>
       <div className="find-events-list">
@@ -39,14 +38,9 @@ export default function GenerateEvents({
                   <span className="bold-header">All The Details: </span>
                   {event.details}
                 </p>
-                {/* <div>
-                  <span
-                    class="material-symbols-outlined"
-                    onClick={() => attendingButton(event._id)}
-                  >
-                    person_add
-                  </span>
-                </div> */}
+                <p>
+                  <button onClick={() => handleDelete(event._id)}>X</button>
+                </p>
               </div>
             );
           })}

@@ -2,11 +2,11 @@ import FindEventButtons from "../../components/FindEventButtons/FindEventButtons
 import GenerateEvents from "../../components/GenerateEvents/GenerateEvents";
 import * as eventsAPI from "../../utilities/events-api";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./FindEventsPage.css";
 
 export default function FindEventsPage() {
   const [showAllEvents, setShowAllEvents] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState("");
 
   useEffect(function () {
     async function getEvents() {
@@ -17,39 +17,16 @@ export default function FindEventsPage() {
     getEvents();
   }, []);
 
-  useEffect(
-    function () {
-      async function filterEvents() {
-        console.log(selectedEvent, "selectedEvent");
-        if (selectedEvent != "") {
-          let events = await eventsAPI.getAllEvents();
-          const filteredEvents = events.filter((event) => {
-            console.log(event, selectedEvent);
-            return event.category === selectedEvent;
-          });
-          setShowAllEvents(filteredEvents);
-        }
-      }
-      filterEvents();
-    },
-    [selectedEvent]
-  );
-
   return (
     <>
       <div className="FindEventsPage">
         <div className="find-events-page-header">
           <h1>KinnectMe with...</h1>
         </div>
-        <FindEventButtons
-          selectedEvent={selectedEvent}
-          setSelectedEvent={setSelectedEvent}
-        />
+        <FindEventButtons />
         <GenerateEvents
           showAllEvents={showAllEvents}
           setShowAllEvents={setShowAllEvents}
-          selectedEvent={selectedEvent}
-          setSelectedEvent={setSelectedEvent}
         />
       </div>
     </>
