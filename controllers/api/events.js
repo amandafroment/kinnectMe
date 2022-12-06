@@ -18,6 +18,7 @@ async function getAllEvents(req, res) {
 // res.json(events);
 
 // //create event
+
 async function createEvent(req, res) {
   req.body.user = req.user._id;
   const event = await Event.create(req.body);
@@ -49,6 +50,10 @@ async function eventRemoveAttendee(req, res) {
   }
 }
 
+async function deleteEvent(req, res) {
+  await Event.findByIdAndDelete(req.params.id);
+}
+//
 
 // //create comment
 
@@ -71,4 +76,5 @@ module.exports = {
   createEvent,
   eventAddAttendee,
   eventRemoveAttendee,
+  delete: deleteEvent,
 };

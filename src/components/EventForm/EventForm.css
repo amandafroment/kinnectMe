@@ -6,6 +6,7 @@
 
 .SelectedEventsHeaderContainer > h1 {
   font-family: Mulish;
+  color: #5c6453;
 }
 
 .EventFormDivContainer {
@@ -47,7 +48,7 @@
   padding: 15px;
   align-self: center;
   border-radius: 10px;
-  border: 3px solid white;
+  border: 2px solid #5c6453;
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;

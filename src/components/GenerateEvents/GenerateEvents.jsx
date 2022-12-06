@@ -2,6 +2,7 @@ import React from "react";
 // import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
+import axios from "axios";
 
 export default function GenerateEvents({
   showAllEvents,
@@ -15,6 +16,12 @@ export default function GenerateEvents({
     eventsAPI.eventAddAttendee(eventId);
   }
 
+  function handleDelete(id) {
+    console.log("Delete clicked!");
+    setShowAllEvents(showAllEvents.filter((event) => event.id !== id));
+    axios.delete(`/api/events/${id}`);
+    console.log("Delete finished!");
+  }
   return (
     <>
       <div className="find-events-list">
@@ -63,6 +70,9 @@ export default function GenerateEvents({
                     </span>
                   )}
                 </div>
+                <p>
+                  <button onClick={() => handleDelete(event._id)}>X</button>
+                </p>
               </div>
             );
           })}
