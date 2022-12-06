@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./FindEventButtons.css";
 
 export default function FindEventButtons() {
   const [selectedEvent, setSelectedEvent] = useState("");
@@ -10,7 +11,7 @@ export default function FindEventButtons() {
           value="Dog Meetups"
           onClick={() => setSelectedEvent("Dog Meetups")}
         >
-          Dog Meetups
+          Dog Group Meetups
         </button>
         <button
           value="Restaurant Crawl"
@@ -28,7 +29,7 @@ export default function FindEventButtons() {
           value="A Different Event"
           onClick={() => setSelectedEvent("A Different Event")}
         >
-          I want to create a different event!
+          I want to see a different event!
         </button>
       </div>
     </>
