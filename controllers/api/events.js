@@ -25,17 +25,17 @@ async function createEvent(req, res) {
 }
 
 // add attendee
-async function eventAddAttendee(req, res) {
-  try {
-    console.log(req.body);
-    const event = await Event.findById(req.body.eventId);
-    event.addAttendee(req.user._id);
-    res.json(event);
-  } catch (error) {
-    console.log(error);
-    res.json(error);
-  }
-}
+// async function eventAddAttendee(req, res) {
+//   try {
+//     console.log(req.body);
+//     const event = await Event.findById(req.body.eventId);
+//     event.addAttendee(req.user._id);
+//     res.json(event);
+//   } catch (error) {
+//     console.log(error);
+//     res.json(error);
+//   }
+// }
 //
 
 // //create comment
