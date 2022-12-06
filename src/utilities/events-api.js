@@ -8,9 +8,6 @@ const BASE_URL = "/api/events";
 //   return sendRequest(`${BASE_URL}`);
 // }
 
-// export function getEventDetail() {
-//   return sendRequest(`${BASE_URL}/${id}`);
-// }
 
 // needs to match the events router
 export function createAddEvent(formData) {
@@ -20,6 +17,15 @@ export function createAddEvent(formData) {
 export function getAllEvents(formData) {
   return sendRequest(BASE_URL);
 }
+
+export function eventAddAttendee(event) {
+  console.log("event", event);
+  return sendRequest(`${BASE_URL}/attend`, "POST", {eventId: event});
+}
+// needs user's events components
+// export function getAllForUser() {
+//   return sendRequest(`${BASE_URL}/user`);
+// }
 
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);
@@ -39,15 +45,6 @@ export function getAllEvents(formData) {
 //     commentId,
 //     editedComment,
 //   });
-// }
-
-// needs user's events components
-// export function getAllForUser() {
-//   return sendRequest(`${BASE_URL}/user`);
-// }
-
-// export function getById(id) {
-//   return sendRequest(`${BASE_URL}/${id}`);
 // }
 
 // // this needs work - passing in 'editedData' and eventId

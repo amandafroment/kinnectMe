@@ -1,23 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
-import AttendingButton from "../AttendingButton/AttendingButton";
+// import AttendingButton from "../AttendingButton/AttendingButton";
 import "./GenerateEvents.css";
 
 export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
-  const [addAttendee, setAddAttendee] = useState([]);
-  const updateEvent = await eventsAPI.setAddAttendee(userId, eventId)
-function attendingButton() {
-  
-}
-  //   useEffect(function () {
-  //     async function getEvents() {
-  //       let events = await eventsAPI.generateEvents();
-  //       setShowEvents(events);
-  //       console.log(events, "events");
-  //     }
-  //     getEvents();
-  //   }, []);
+  function attendingButton(eventId) {
+    console.log("test");
+    console.log(eventId);
+    eventsAPI.eventAddAttendee(eventId);
+  }
+
+  //   const [showAttending, setShowAttending] = useState("");
 
   return (
     <>
@@ -31,7 +25,14 @@ function attendingButton() {
                 <div>{event.date}</div>
                 <div>{event.location}</div>
                 <div>{event.address}</div>
-                <button onClick={attendingButton}>Attending</button>
+                <div>
+                  <span
+                    class="material-symbols-outlined"
+                    onClick={() => attendingButton(event._id)}
+                  >
+                    person_add
+                  </span>
+                </div>
               </div>
             );
           })}

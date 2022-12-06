@@ -1,4 +1,5 @@
 const Event = require("../../models/event");
+const { findById } = require("../../models/user");
 const User = require("../../models/user");
 
 // // get all events that are created
@@ -23,7 +24,25 @@ async function createEvent(req, res) {
   const event = await Event.create(req.body);
   res.json(event);
 }
-//
+// add attendee
+async function eventAddAttendee(req, res) {
+  try {
+    console.log(req.body);
+    const event = await Event.findById(req.body.eventId);
+    event.addAttendee(req.user._id);
+    res.json(event);
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+}
+// remove attendee
+
+// async function unfollowEvent(req,res) {
+//   const event = await Event.getAttendingEvent(req.params.event)
+// event.removeAttendee(req.user._id)
+// res.json(event);
+// }
 
 // //create comment
 
@@ -44,4 +63,5 @@ module.exports = {
   //   getAllForUser,
   getAllEvents,
   createEvent,
+  eventAddAttendee,
 };

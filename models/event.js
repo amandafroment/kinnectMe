@@ -27,7 +27,14 @@ const eventSchema = new Schema(
     address: String,
     category: String,
     details: String,
-    attendees: Number,
+    attendees: [
+      {
+        user: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+        },
+      },
+    ],
     comment: [commentSchema],
     user: {
       type: Schema.Types.ObjectId,
@@ -42,15 +49,25 @@ const eventSchema = new Schema(
 );
 
 // Static method to get the Event model? Once created?
-// eventSchema.virtual("getAttendees").get(function() {
-//   return this.attendees.length
-// })
+eventSchema.virtual("getAttendees").get(function () {
+  return this.attendees.length;
+});
 
-// Instance method to add an event?
-// eventSchema.methods.addAttendee = async function(usertId) {
-//   const event =
-// }
+eventSchema.methods.addAttendee = async function (userId) {
+  const event = this;
+  const isAttending = event.attendees.find((attendee) =>
+    attendee._id.equals(userId)
+  );
+  if (isAttending) return;
+  event.attendees.push(userId);
+  return event.save();
+};
 
+// eventSchema.methods.getAttendingEvent = async function (eventId) {
+//   return this.find({
+//     _id: eventId,
+//   });
+// };
 // Instance method to add an comment?
 // Needs work!
 // eventSchema.methods.addCommentToEvent = async function (commentId) {

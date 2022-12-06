@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 async function AttendingButton({eventId, userId}) {
     
-    // const attendee = 
 
   return (
     <div>
