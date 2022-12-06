@@ -8,6 +8,7 @@ const eventsCtrl = require("../../controllers/api/events");
 // // POST /api/events/create
 router.get("/", eventsCtrl.getAllEvents);
 router.post("/create", eventsCtrl.createEvent);
+router.post("/attend", eventsCtrl.eventAddAttendee);
 router.delete("/:id", eventsCtrl.delete);
 
 // // POST /api/events/comment
