@@ -17,6 +17,24 @@ export default function FindEventsPage() {
     getEvents();
   }, []);
 
+  useEffect(
+    function () {
+      async function filterEvents() {
+        console.log(selectedEvent, "selectedEvent");
+        if (selectedEvent != "") {
+          let events = await eventsAPI.getAllEvents();
+          const filteredEvents = events.filter((event) => {
+            console.log(event, selectedEvent);
+            return event.category === selectedEvent;
+          });
+          setShowAllEvents(filteredEvents);
+        }
+      }
+      filterEvents();
+    },
+    [selectedEvent]
+  );
+
   return (
     <>
       <div className="FindEventsPage">
