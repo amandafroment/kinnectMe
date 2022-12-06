@@ -20,10 +20,6 @@ export default function EventForm({ selectedCategory }) {
 
   const navigate = useNavigate();
 
-  const navigateToHome = () => {
-    navigate("/");
-  };
-
   function handleChangeForm(evt) {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
     setError("");

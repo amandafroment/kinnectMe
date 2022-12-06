@@ -18,10 +18,16 @@ async function getAllEvents(req, res) {
 // res.json(events);
 
 // //create event
+
 async function createEvent(req, res) {
   req.body.user = req.user._id;
   const event = await Event.create(req.body);
   res.json(event);
+}
+
+async function deleteEvent(req, res) {
+  await Event.findByIdAndDelete(req.params.id);
+  res.send(200).json("Done");
 }
 //
 
@@ -44,4 +50,5 @@ module.exports = {
   //   getAllForUser,
   getAllEvents,
   createEvent,
+  delete: deleteEvent,
 };
