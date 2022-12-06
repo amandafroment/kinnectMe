@@ -3,6 +3,7 @@ import React from "react";
 import "./CreateEventPage.css";
 import CategoryButtons from "../../components/CategoryButtons/CategoryButtons";
 import EventForm from "../../components/EventForm/EventForm";
+// import AttendingButton from "../../components/AttendingButton/AttendingButton";
 
 export default function CreateEventPage() {
   const [selectedCategory, setSelectedCategory] = useState("");

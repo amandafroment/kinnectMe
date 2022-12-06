@@ -24,6 +24,9 @@ export function getAllEvents(formData) {
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);
 // }
+// export function getCommentById() {
+//   return sendRequest(`${BASE_URL}/comment/${id}`);
+// }
 
 // // this needs work - passing in 'editedData' and eventId???
 // // would it be formData?

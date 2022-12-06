@@ -42,7 +42,9 @@ const eventSchema = new Schema(
 );
 
 // Static method to get the Event model? Once created?
-// eventSchema.statics.getCommentsBoard = function()
+// eventSchema.virtual("getAttendees").get(function() {
+//   return this.attendees.length
+// })
 
 // Instance method to add an event?
 // eventSchema.methods.addAttendee = async function(usertId) {

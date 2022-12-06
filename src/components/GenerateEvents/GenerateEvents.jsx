@@ -1,9 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
+import AttendingButton from "../AttendingButton/AttendingButton";
 import "./GenerateEvents.css";
 
 export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
+  const [addAttendee, setAddAttendee] = useState([]);
+  const updateEvent = await eventsAPI.setAddAttendee(userId, eventId)
+function attendingButton() {
+  
+}
   //   useEffect(function () {
   //     async function getEvents() {
   //       let events = await eventsAPI.generateEvents();
@@ -25,6 +31,7 @@ export default function GenerateEvents({ showAllEvents, setShowAllEvents }) {
                 <div>{event.date}</div>
                 <div>{event.location}</div>
                 <div>{event.address}</div>
+                <button onClick={attendingButton}>Attending</button>
               </div>
             );
           })}
