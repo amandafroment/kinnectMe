@@ -45,6 +45,7 @@ export default function EventForm({ selectedCategory }) {
     try {
       let event = await eventsAPI.createAddEvent(formData);
       setFormData(formData);
+      navigate("/");
     } catch (err) {
       console.log(err);
       setError("Create Event Failed - Try Again");
@@ -128,9 +129,7 @@ export default function EventForm({ selectedCategory }) {
             required
             onChange={handleChangeForm}
           />
-          <button type="submit" onClick={navigateToHome}>
-            Create My Event
-          </button>
+          <button type="submit">Create My Event</button>
         </form>
       </div>
     </>
