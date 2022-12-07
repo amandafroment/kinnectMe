@@ -10,6 +10,11 @@
   width: 97%;
 }
 
+.logo {
+  margin-top: 7px;
+
+}
+
 .links {
   color: rgb(170, 180, 161);
   text-decoration: none;

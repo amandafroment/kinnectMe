@@ -21,6 +21,10 @@ export function getAllEvents(formData) {
   return sendRequest(BASE_URL);
 }
 
+export function getDetails(id) {
+  console.log(id, "from events-api");
+  return sendRequest(`${BASE_URL}/${id}`);
+
 export function eventAddAttendee(event) {
   console.log("event", event);
   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });

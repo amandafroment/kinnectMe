@@ -1,28 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import CategoryButtons from "../../components/CategoryButtons/CategoryButtons";
-import EventForm from "../../components/EventForm/EventForm";
-
-export default function CreateEventPage() {
-  const [selectedCategory, setSelectedCategory] = useState("");
-
+export default function EventDetailsPage({ event }) {
+  console.log(event);
   return (
     <>
-      <main className="CreateEventPage">
-        <h1>KinnectMe with...</h1>
-        <CategoryButtons
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-        {selectedCategory === "" ? (
-          <h2>Click a category to start your event planning!</h2>
-        ) : (
-          <EventForm
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
-        )}
-      </main>
+      <h1> Details Page</h1>
+      {event.name}
+      {event.category}
+      {event.comment}
     </>
   );
 }
