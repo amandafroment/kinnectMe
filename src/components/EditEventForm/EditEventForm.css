@@ -7,6 +7,7 @@
 
 .edit-header > h1 {
   font-size: 35px;
+  margin-bottom: 5px;
 }
 
 .edit-header-name {
@@ -75,6 +76,20 @@
   .EditFormDivContainer {
     width: 95vw;
     border-radius: 25px;
-    margin-top: 10px;
+    margin-top: 0px;
+  }
+
+  .edit-header {
+    margin-top: 5px;
+  }
+
+  .edit-header > h1 {
+    font-size: 22px;
+  }
+
+  .edit-header-name {
+    font-family: "Shadows Into Light";
+    font-size: 32px;
+    margin-bottom: 0px;
   }
 }

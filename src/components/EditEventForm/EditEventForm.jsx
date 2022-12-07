@@ -66,10 +66,10 @@ export default function EditEventForm({ selectedCategory, event }) {
   return (
     <>
       <div className="edit-header">
-        <h1>
-          EDITTING IN PROGRESS...{" "}
+        <h1>EDITTING IN PROGRESS... </h1>
+        <h2>
           <span className="edit-header-name">{event.name.toUpperCase()}</span>
-        </h1>
+        </h2>
       </div>
       <div className="EditFormDivContainer">
         <form
