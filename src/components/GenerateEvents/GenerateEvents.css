@@ -63,11 +63,4 @@
   .bold-header {
     margin-right: 2px;
   }
-
-  .details-text {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    flex-wrap: wrap;
-  }
 }
