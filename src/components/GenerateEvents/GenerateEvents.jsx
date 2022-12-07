@@ -5,6 +5,7 @@ import "./GenerateEvents.css";
 import axios from "axios";
 
 export default function GenerateEvents({
+  user,
   showAllEvents,
   setShowAllEvents,
   selectedEvent,
@@ -20,6 +21,7 @@ export default function GenerateEvents({
       <div className="find-events-list">
         <div>
           {showAllEvents.map((event) => {
+            console.log(event.user == user.user._id);
             return (
               <div className="find-event-card">
                 <h2 className="bold-header">{event.name.toUpperCase()}</h2>
@@ -42,8 +44,11 @@ export default function GenerateEvents({
                   <span className="bold-header">Category:</span>{" "}
                   {event.category}
                 </p>
+
                 <p>
-                  <button onClick={() => handleDelete(event._id)}>X</button>
+                  {event.user == user.user._id && (
+                    <button onClick={() => handleDelete(event._id)}>X</button>
+                  )}
                 </p>
               </div>
             );

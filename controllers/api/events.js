@@ -28,7 +28,11 @@ async function createEvent(req, res) {
 async function deleteEvent(req, res) {
   await Event.findByIdAndDelete(req.params.id);
 }
-//
+
+async function updateEvent(req, res) {
+  let event = await Event.findByIdAndUpdate(req.params.id);
+  res.json(event);
+}
 
 // //create comment
 
@@ -50,4 +54,5 @@ module.exports = {
   getAllEvents,
   createEvent,
   delete: deleteEvent,
+  update: updateEvent,
 };
