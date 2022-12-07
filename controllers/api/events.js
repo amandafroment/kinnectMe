@@ -16,6 +16,11 @@ async function createEvent(req, res) {
   res.json(event);
 }
 
+async function updateEvent(req, res) {
+  let updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body);
+  res.json(updatedEvent);
+}
+
 async function getDetails(req, res) {
   let id = req.params.id;
   console.log(req.params.id, "req.params.id events");
@@ -107,4 +112,5 @@ module.exports = {
   eventAddAttendee,
   eventRemoveAttendee,
   delete: deleteEvent,
+  update: updateEvent,
 };
