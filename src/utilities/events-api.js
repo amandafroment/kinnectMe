@@ -28,7 +28,11 @@ export function eventAddAttendee(event) {
 
 export function eventRemoveAttendee(event) {
   console.log("event", event);
-  return sendRequest(`${BASE_URL}/attend/${id}`, "DELETE", { eventId: event, attendee: id });
+  return sendRequest(`${BASE_URL}/attend/${id}`, "PUT", { eventId: event });
+}
+
+export function getAllForUser() {
+  return sendRequest(`${BASE_URL}/user`);
 }
 
 // export function getCommentById() {
@@ -46,11 +50,6 @@ export function eventRemoveAttendee(event) {
 //     commentId,
 //     editedComment,
 //   });
-// }
-
-// needs user's events components
-// export function getAllForUser() {
-//   return sendRequest(`${BASE_URL}/user`);
 // }
 
 // export function getById(id) {

@@ -1,21 +1,34 @@
 import { useState, useEffect } from "react";
-// import * as eventsAPI from "../../utilities/events-api";
+import * as eventsAPI from "../../utilities/events-api";
+import "./MyEvents.css";
 
-export default function MyEvents() {
-  const [events, setEvents] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+export default function MyEvents({ user }) {
+  console.log(event)
+  const [showAllForUser, setShowAllForUser] = useState([]);
+  let userEvents = eventsAPI.getAllForUser();
+  setShowAllForUser(events);
+    getEvents();
 
-  // useEffect(function () {
+    // useEffect(function () {
   //   async function getEvents() {
-  //     const events = await eventsAPI.getAll();
-  //     setEvents(events);
+
+  // setEvents(events);
   //   }
-  //   getEvents();
+
   // }, []);
 
   return (
     <>
-      <h2>My Events</h2>
+      <div className="UserEventsPage">
+        <div className="user-events-page-header">
+          <h1>I'm kinnected to:</h1>
+        </div>
+        <UserEvents
+          showAllForUser={showAllForUser}
+          setShowAllForUser={setShowAllForUser}
+          user={user}
+        />
+      </div>
     </>
   );
 }

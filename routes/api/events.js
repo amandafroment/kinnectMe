@@ -16,6 +16,7 @@ router.post("/attend", eventsCtrl.eventAddAttendee);
 
 // GET /api/events
 router.get("/", eventsCtrl.getAllEvents);
+router.get("/user", eventsCtrl.getAllForUser);
 
 // GET /api/events/detail
 // router.get("/detail", eventsCtrl.eventDetail);

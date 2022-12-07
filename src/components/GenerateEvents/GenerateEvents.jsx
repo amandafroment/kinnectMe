@@ -3,6 +3,7 @@ import React from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 import axios from "axios";
+import { eventRemoveAttendee } from "../../../controllers/api/events";
 
 export default function GenerateEvents({
   showAllEvents,
@@ -11,8 +12,10 @@ export default function GenerateEvents({
   user,
 }) {
   function attendingButton(eventId) {
-    // console.log("test");
-    // console.log(eventId);
+    for (let event of showAllEvents) {
+      console.log(event.attendees);
+    }
+    console.log(user);
     eventsAPI.eventAddAttendee(eventId);
   }
 
@@ -28,18 +31,16 @@ export default function GenerateEvents({
         <div>
           {showAllEvents.map((event) => {
             // let isAttending = event.attendees.includes({ _id: user });
-            const isAttending = event.attendees.findIndex((element) => {
-              if (element._id === user) {
-                console.log("true");
-                return true;
-              }
-              console.log(element);
-              console.log("false");
-              return false;
-            });
-            console.log(event.attendees.includes({ _id: user }));
-            // console.log(user);
-            // console.log(event.attendees[0]);
+            // const isAttending = event.attendees.findIndex((element) => {
+            //   if (element._id === user) {
+            //     console.log("true");
+            //     return true;
+            //   }
+            //   console.log(element);
+            //   console.log("false");
+            //   return false;
+            // });
+
             return (
               <div className="find-event-card">
                 <h2 className="bold-header">{event.name.toUpperCase()}</h2>
@@ -59,8 +60,15 @@ export default function GenerateEvents({
                   {event.details}
                 </p>
                 <div>
-                  {event.attendees.includes(user) ? (
-                    <span class="material-symbols-outlined">person_off</span>
+                  {event.attendees.some(
+                    (attendee) => attendee._id === user._id
+                  ) ? (
+                    <span
+                      class="material-symbols-outlined"
+                      onClick={() => eventRemoveAttendee(event._id)}
+                    >
+                      person_off
+                    </span>
                   ) : (
                     <span
                       class="material-symbols-outlined"

@@ -25,7 +25,7 @@ const eventSchema = new Schema(
     date: Date,
     location: String,
     address: String,
-    category: String,git a
+    category: String,
     details: String,
     attendees: [
       {
@@ -71,6 +71,7 @@ eventSchema.methods.removeAttendee = async function (userId) {
   isAttending.attendees.findOneAndRemove(userId);
   return event.save();
 };
+
 
 
 // Static method to get the Event model? Once created?
