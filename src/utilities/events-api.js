@@ -29,9 +29,14 @@ export function eventAddAttendee(event) {
   console.log("event", event);
   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
 }
-export function eventRemoveAttendee(event) {
-  console.log("event", event);
-  return sendRequest(`${BASE_URL}/attend`, "DELETE", { eventId: event });
+
+export function eventRemoveAttendee(eventId, userId) {
+  console.log("event", eventId);
+  return sendRequest(`${BASE_URL}/attend/${userId}`, "DELETE", { eventId: eventId });
+}
+
+export function getAllForUser() {
+  return sendRequest(`${BASE_URL}/user`);
 }
 
 // export function getCommentById() {
@@ -49,11 +54,6 @@ export function eventRemoveAttendee(event) {
 //     commentId,
 //     editedComment,
 //   });
-// }
-
-// needs user's events components
-// export function getAllForUser() {
-//   return sendRequest(`${BASE_URL}/user`);
 // }
 
 // export function getById(id) {

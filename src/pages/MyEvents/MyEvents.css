@@ -1,0 +1,14 @@
+.UserEventsPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-events-page-header {
+  margin-top: 5%;
+  font-family: "Shadows Into Light";
+  font-size: 20px;
+  color: #5c6453;
+}

@@ -1,5 +1,5 @@
 const Event = require("../../models/event");
-const User = require("../../models/user");
+// const User = require("../../models/user");
 
 // // get all events that are created
 async function getAllEvents(req, res) {
@@ -26,21 +26,22 @@ async function getDetails(req, res) {
 }
 
 // // users past and future events
-// async function getAllForUser(req, res) {
-//   const events = Event.find({ user: req.user._id }).sort();
-// }
-// res.json(events);
-
-// //create event
-
-
-async function createEvent(req, res) {
-  req.body.user = req.user._id;
-  const event = await Event.create(req.body);
-  res.json(event);
+async function getAllForUser(req, res) {
+  const eventsCreated = await Event.find({ user: req.user._id }).sort();
+  const allEvents = await Event.find({});
+  let eventsAttending = [];
+  allEvents.forEach((event) => {
+    event.attendees.forEach((attendee) => {
+      if (attendee._id == req.user._id) {
+        eventsAttending.push(event);
+      }
+    });
+  });
+  console.log(eventsAttending);
+  res.json([eventsCreated, eventsAttending]);
 }
 
-// add attendee
+//  add attendee
 async function eventAddAttendee(req, res) {
   try {
     console.log(req.body);
@@ -57,7 +58,18 @@ async function eventRemoveAttendee(req, res) {
   try {
     console.log(req.body);
     const event = await Event.findById(req.body.eventId);
-    event.removeAttendee(req.user._id);
+    event.attendees.forEach((attendee) => {
+      console.log(
+        attendee._id.toString(),
+        req.params.id,
+        attendee._id.toString() !== req.params.id
+      );
+    });
+    event.attendees = event.attendees.filter(
+      (attendee) => attendee._id.toString() !== req.params.id
+    );
+    event.save();
+    // event.removeAttendee(req.user._id);
     res.json(event);
   } catch (error) {
     console.log("error", error);
@@ -65,6 +77,7 @@ async function eventRemoveAttendee(req, res) {
   }
 }
 
+// delete event
 async function deleteEvent(req, res) {
   await Event.findByIdAndDelete(req.params.id);
 }
@@ -87,12 +100,11 @@ async function deleteEvent(req, res) {
 
 module.exports = {
   //   getAll,
-  //   getAllForUser,
+  getAllForUser,
   getAllEvents,
   createEvent,
   getDetails,
   eventAddAttendee,
   eventRemoveAttendee,
   delete: deleteEvent,
-
 };
