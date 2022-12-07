@@ -16,6 +16,8 @@ export default function GenerateEvents({
     axios.delete(`/api/events/${id}`);
     console.log("Delete finished!");
   }
+
+  function handleUpdate(id) {}
   return (
     <>
       <div className="find-events-list">
@@ -48,6 +50,14 @@ export default function GenerateEvents({
                 <p>
                   {event.user == user.user._id && (
                     <button onClick={() => handleDelete(event._id)}>X</button>
+                  )}
+                </p>
+                <p>
+                  {event.user == user.user._id && (
+                    <button>
+                      {/* onClick={() => handleUpdate(event._id)} */}
+                      Update
+                    </button>
                   )}
                 </p>
               </div>
