@@ -10,11 +10,6 @@
   width: 97%;
 }
 
-.logo {
-  margin-top: 7px;
-
-}
-
 .links {
   color: rgb(170, 180, 161);
   text-decoration: none;
@@ -32,6 +27,40 @@
   font-size: 20px;
 }
 
-/* .material-symbols-outlined {
-  margin-top: 15px;
-} */
+@media only screen and (max-width: 450px) {
+  .NavBarContainer {
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+    width: 97%;
+    height: 10%;
+  }
+
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+
+  .welcome-user {
+    display: none;
+  }
+
+  .links {
+    color: rgb(170, 180, 161);
+    text-decoration: none;
+    font-family: Mulish;
+    margin-bottom: 3px;
+  }
+
+  .links:hover {
+    color: #889081;
+  }
+
+  .logo {
+    margin-top: 7px;
+    margin-bottom: 0px;
+    font-family: "Shadows Into Light";
+    font-size: 20px;
+  }
+}
