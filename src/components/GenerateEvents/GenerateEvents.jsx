@@ -3,7 +3,7 @@ import React from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 import axios from "axios";
-import { eventRemoveAttendee } from "../../../controllers/api/events";
+import { eventRemoveAttendee } from "../../utilities/events-api";
 
 export default function GenerateEvents({
   showAllEvents,
@@ -11,11 +11,12 @@ export default function GenerateEvents({
   selectedEvent,
   user,
 }) {
-  function attendingButton(eventId) {
+  function handleAddAttendee(event, eventId) {
     for (let event of showAllEvents) {
       console.log(event.attendees);
     }
-    console.log(user);
+    event.attendees.push({ _id: user._id });
+    setShowAllEvents([...showAllEvents, event]);
     eventsAPI.eventAddAttendee(eventId);
   }
 
@@ -25,22 +26,17 @@ export default function GenerateEvents({
     axios.delete(`/api/events/${id}`);
     console.log("Delete finished!");
   }
+  function handleRemoveAttendee(event, attendeeId) {
+    event.attendees = event.attendees.filter(
+      (attendee) => attendee._id !== attendeeId
+    );
+    setShowAllEvents([...showAllEvents, event]);
+  }
   return (
     <>
       <div className="find-events-list">
         <div>
           {showAllEvents.map((event) => {
-            // let isAttending = event.attendees.includes({ _id: user });
-            // const isAttending = event.attendees.findIndex((element) => {
-            //   if (element._id === user) {
-            //     console.log("true");
-            //     return true;
-            //   }
-            //   console.log(element);
-            //   console.log("false");
-            //   return false;
-            // });
-
             return (
               <div className="find-event-card">
                 <h2 className="bold-header">{event.name.toUpperCase()}</h2>
@@ -65,14 +61,17 @@ export default function GenerateEvents({
                   ) ? (
                     <span
                       class="material-symbols-outlined"
-                      onClick={() => eventRemoveAttendee(event._id)}
+                      onClick={() => {
+                        eventRemoveAttendee(event._id, user._id);
+                        handleRemoveAttendee(event, user._id);
+                      }}
                     >
                       person_off
                     </span>
                   ) : (
                     <span
                       class="material-symbols-outlined"
-                      onClick={() => attendingButton(event._id)}
+                      onClick={() => handleAddAttendee(event, event._id)}
                     >
                       person_add
                     </span>

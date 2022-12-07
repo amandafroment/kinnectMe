@@ -11,7 +11,7 @@ import MyEvents from "../MyEvents/MyEvents";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [event, setEvent] = useState(getEvent())
+  // const [event, setEvent] = useState(getEvent())
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               <Route path="/" element={<FindEventsPage user={user} />} />
-              <Route path="/myevents" element={<MyEvents user={user} setEvent={setEvent} />} />
+              <Route path="/myevents" element={<MyEvents user={user} />} />
               {/* // routes is another component that allows us to set up all of our
               different routes, it is a package built into react-router */}
               <Route path="/eventsdetails" element={<EventDetailsPage />} />

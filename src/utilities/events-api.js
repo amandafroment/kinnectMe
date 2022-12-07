@@ -26,9 +26,9 @@ export function eventAddAttendee(event) {
   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
 }
 
-export function eventRemoveAttendee(event) {
-  console.log("event", event);
-  return sendRequest(`${BASE_URL}/attend/${id}`, "PUT", { eventId: event });
+export function eventRemoveAttendee(eventId, userId) {
+  console.log("event", eventId);
+  return sendRequest(`${BASE_URL}/attend/${userId}`, "DELETE", { eventId: eventId });
 }
 
 export function getAllForUser() {
