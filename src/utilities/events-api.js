@@ -21,6 +21,11 @@ export function getAllEvents(formData) {
   return sendRequest(BASE_URL);
 }
 
+export function getDetails(id) {
+  console.log(id, "from events-api");
+  return sendRequest(`${BASE_URL}/${id}`);
+}
+
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);
 // }

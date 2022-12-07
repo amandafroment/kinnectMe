@@ -10,6 +10,20 @@ async function getAllEvents(req, res) {
     res.json(events);
   }
 }
+async function createEvent(req, res) {
+  req.body.user = req.user._id;
+  const event = await Event.create(req.body);
+  res.json(event);
+}
+
+async function getDetails(req, res) {
+  let id = req.params.id;
+  console.log(req.params.id, "req.params.id events");
+  Event.findById(id, function (err, event) {
+    res.json(event);
+    console.log(event, "Controller being hit");
+  });
+}
 
 // // users past and future events
 // async function getAllForUser(req, res) {
@@ -18,11 +32,6 @@ async function getAllEvents(req, res) {
 // res.json(events);
 
 // //create event
-async function createEvent(req, res) {
-  req.body.user = req.user._id;
-  const event = await Event.create(req.body);
-  res.json(event);
-}
 //
 
 // //create comment
@@ -44,4 +53,5 @@ module.exports = {
   //   getAllForUser,
   getAllEvents,
   createEvent,
+  getDetails,
 };
