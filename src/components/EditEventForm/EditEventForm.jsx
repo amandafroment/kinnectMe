@@ -6,11 +6,11 @@ import * as eventsAPI from "../../utilities/events-api";
 export default function EditEventForm({ selectedCategory, event }) {
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    name: "",
+    name: event.name,
     date: new Date(),
-    location: "",
-    address: "",
-    details: "",
+    location: event.location,
+    address: event.address,
+    details: event.details,
     category: selectedCategory,
   });
 
