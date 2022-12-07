@@ -32,6 +32,43 @@ async function getDetails(req, res) {
 // res.json(events);
 
 // //create event
+
+
+async function createEvent(req, res) {
+  req.body.user = req.user._id;
+  const event = await Event.create(req.body);
+  res.json(event);
+}
+
+// add attendee
+async function eventAddAttendee(req, res) {
+  try {
+    console.log(req.body);
+    const event = await Event.findById(req.body.eventId);
+    event.addAttendee(req.user._id);
+    res.json(event);
+  } catch (error) {
+    console.log("error", error);
+    res.json(error);
+  }
+}
+// remove attendee
+async function eventRemoveAttendee(req, res) {
+  try {
+    console.log(req.body);
+    const event = await Event.findById(req.body.eventId);
+    event.removeAttendee(req.user._id);
+    res.json(event);
+  } catch (error) {
+    console.log("error", error);
+    res.json(error);
+  }
+}
+
+async function deleteEvent(req, res) {
+  await Event.findByIdAndDelete(req.params.id);
+}
+
 //
 
 // //create comment
@@ -54,4 +91,8 @@ module.exports = {
   getAllEvents,
   createEvent,
   getDetails,
+  eventAddAttendee,
+  eventRemoveAttendee,
+  delete: deleteEvent,
+
 };

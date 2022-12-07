@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .CreateEventPage {
   display: flex;
   flex-direction: column;
@@ -6,4 +9,16 @@
 
 .create-events-page-header {
   margin-top: 5%;
+
+  font-family: "Shadows Into Light";
+  font-size: 20px;
+  color: #5c6453;
+}
+
+.events-planning-message {
+  background-color: #ccd2c7;
+  border-radius: 25px;
+  padding: 50px;
+  margin: 200px;
+  color: #5c6453;
 }
