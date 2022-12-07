@@ -35,12 +35,6 @@ export default function GenerateEvents({
     eventsAPI.eventAddAttendee(eventId);
   }
 
-  function handleDelete(id) {
-    console.log("Delete clicked!");
-    setShowAllEvents(showAllEvents.filter((event) => event.id !== id));
-    axios.delete(`/api/events/${id}`);
-    console.log("Delete finished!");
-  }
   function handleRemoveAttendee(event, attendeeId) {
     event.attendees = event.attendees.filter(
       (attendee) => attendee._id !== attendeeId
@@ -115,19 +109,6 @@ export default function GenerateEvents({
                     </span>
                   )}
                 </div>
-                <p>
-                  {event.user == user._id && (
-                    <button onClick={() => handleDelete(event._id)}>X</button>
-                  )}
-                </p>
-                <p>
-                  {event.user == user._id && (
-                    <button>
-                      {/* onClick={() => handleUpdate(event._id)} */}
-                      Update
-                    </button>
-                  )}
-                </p>
               </div>
             );
           })}

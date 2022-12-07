@@ -65,6 +65,11 @@ eventSchema.methods.addAttendee = async function (userId) {
 // Static method to get the Event model? Once created?
 // eventSchema.statics.getCommentsBoard = function()
 
+// Instance method to add an event?
+// eventSchema.methods.addAttendee = async function(usertId) {
+//   const event =
+// }
+
 // Instance method to add an comment?
 // Needs work!
 // eventSchema.methods.addCommentToEvent = async function (commentId) {

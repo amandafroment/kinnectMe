@@ -9,11 +9,9 @@ const eventsCtrl = require("../../controllers/api/events");
 
 router.post("/create", eventsCtrl.createEvent);
 router.get("/user", eventsCtrl.getAllForUser);
-
 router.get("/:id", eventsCtrl.getDetails);
-
 router.post("/attend", eventsCtrl.eventAddAttendee);
-
+router.put("/:id", eventsCtrl.update);
 // // POST /api/events/comment
 // router.post("/comment", eventsCtrl.createComment);
 

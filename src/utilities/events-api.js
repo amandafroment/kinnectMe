@@ -25,6 +25,11 @@ export function getDetails(id) {
   console.log(id, "from events-api");
   return sendRequest(`${BASE_URL}/${id}`);
 }
+
+export function updateEvent(formData, id) {
+  return sendRequest(`${BASE_URL}/${id}`, "PUT", formData);
+}
+
 export function eventAddAttendee(event) {
   console.log("event", event);
   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
@@ -32,7 +37,9 @@ export function eventAddAttendee(event) {
 
 export function eventRemoveAttendee(eventId, userId) {
   console.log("event", eventId);
-  return sendRequest(`${BASE_URL}/attend/${userId}`, "DELETE", { eventId: eventId });
+  return sendRequest(`${BASE_URL}/attend/${userId}`, "DELETE", {
+    eventId: eventId,
+  });
 }
 
 export function getAllForUser() {
