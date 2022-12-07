@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .UserEventsPage {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -11,4 +14,59 @@
   font-family: "Shadows Into Light";
   font-size: 20px;
   color: #5c6453;
+}
+
+.created-events-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 55%;
+  margin-top: 25px;
+}
+.attending-events-list {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  margin-top: 25px;
+}
+
+.user-event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #bbc3b4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  color: #5c6453;
+}
+
+.generate-events-links {
+  color: #5c6453;
+  text-decoration: none;
+}
+
+.generate-events-links:hover {
+  color: #bbc3b4;
+}
+
+.user-event-card > p {
+  margin: 7.5px;
+}
+
+.user-event-card > h2 {
+  margin: 10px;
+}
+
+.bold-header {
+  font-weight: bold;
+}
+
+.generate-events-links {
+  color: #5c6453;
+  text-decoration: none;
+}
+
+.generate-events-links:hover {
+  color: #bbc3b4;
 }

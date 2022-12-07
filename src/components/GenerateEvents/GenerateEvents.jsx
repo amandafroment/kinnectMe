@@ -46,14 +46,11 @@ export default function GenerateEvents({
       <div className="find-events-list">
         <div>
           {showAllEvents.map((event) => {
-            // let isAttending = event.attendees.includes({ _id: user });
             const isAttending = event.attendees.findIndex((element) => {
               if (element._id === user) {
                 console.log("true");
                 return true;
               }
-              console.log(element);
-              console.log("false");
               return false;
             });
             console.log(event.attendees.includes({ _id: user }));
