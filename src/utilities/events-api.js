@@ -25,9 +25,10 @@ export function eventAddAttendee(event) {
   console.log("event", event);
   return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
 }
+
 export function eventRemoveAttendee(event) {
   console.log("event", event);
-  return sendRequest(`${BASE_URL}/attend`, "DELETE", { eventId: event });
+  return sendRequest(`${BASE_URL}/attend/${id}`, "DELETE", { eventId: event, attendee: id });
 }
 
 // export function getCommentById() {

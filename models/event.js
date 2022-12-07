@@ -25,7 +25,7 @@ const eventSchema = new Schema(
     date: Date,
     location: String,
     address: String,
-    category: String,
+    category: String,git a
     details: String,
     attendees: [
       {
