@@ -41,7 +41,11 @@ export class SignUpForm extends Component {
     return (
       <div>
         <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <form
+            autoComplete="off"
+            onSubmit={this.handleSubmit}
+            className="signup-form"
+          >
             <label>Name</label>
             <input
               type="text"
@@ -74,12 +78,16 @@ export class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <button type="submit" disabled={disable} className="signupbtn">
+            <button type="submit" disabled={disable} className="signup-btn">
               SIGN UP
             </button>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        {this.state.error ? (
+          <p className="error-message">&nbsp;{this.state.error}</p>
+        ) : (
+          <span></span>
+        )}
       </div>
     );
   }

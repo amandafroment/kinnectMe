@@ -16,6 +16,14 @@
   color: #5c6453;
 }
 
+.generate-events-links {
+  text-decoration: none;
+}
+
+.generate-events-links:hover {
+  color: #bbc3b4;
+}
+
 .find-event-card > p {
   margin: 7.5px;
 }
