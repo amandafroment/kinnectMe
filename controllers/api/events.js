@@ -16,12 +16,16 @@ async function createEvent(req, res) {
   res.json(event);
 }
 
+async function createComment(req, res) {
+  console.log("Create Comment Controller being hit");
+}
+
 async function getDetails(req, res) {
   let id = req.params.id;
   console.log(req.params.id, "req.params.id events");
   Event.findById(id, function (err, event) {
     res.json(event);
-    console.log(event, "Controller being hit");
+    console.log(event, "get Details Controller being hit");
   });
 }
 
@@ -32,7 +36,6 @@ async function getDetails(req, res) {
 // res.json(events);
 
 // //create event
-
 
 async function createEvent(req, res) {
   req.body.user = req.user._id;
@@ -94,5 +97,5 @@ module.exports = {
   eventAddAttendee,
   eventRemoveAttendee,
   delete: deleteEvent,
-
+  createComment,
 };

@@ -56,32 +56,34 @@ export default function GenerateEvents({
             // console.log(user);
             // console.log(event.attendees[0]);
             return (
-              <Link
-                key={event._id}
-                onClick={() => {
-                  handleDetails(event._id);
-                  setEvent(event);
-                }}
-                to={"/" + event._id}
-              >
+              <>
                 <div className="find-event-card">
-                  <h2 className="bold-header">{event.name.toUpperCase()}</h2>
-                  <p>
-                    <span className="bold-header">Time & Place:</span>{" "}
-                    {event.date}
-                  </p>
-                  <p>
-                    <span className="bold-header">Location:</span>{" "}
-                    {event.location}
-                  </p>
-                  <p>
-                    <span className="bold-header">Address:</span>{" "}
-                    {event.address}
-                  </p>
-                  <p>
-                    <span className="bold-header">All The Details: </span>
-                    {event.details}
-                  </p>
+                  <Link
+                    key={event._id}
+                    onClick={() => {
+                      handleDetails(event._id);
+                      setEvent(event);
+                    }}
+                    to={"/" + event._id}
+                  >
+                    <h2 className="bold-header">{event.name.toUpperCase()}</h2>
+                    <p>
+                      <span className="bold-header">Time & Place:</span>{" "}
+                      {event.date}
+                    </p>
+                    <p>
+                      <span className="bold-header">Location:</span>{" "}
+                      {event.location}
+                    </p>
+                    <p>
+                      <span className="bold-header">Address:</span>{" "}
+                      {event.address}
+                    </p>
+                    <p>
+                      <span className="bold-header">All The Details: </span>
+                      {event.details}
+                    </p>
+                  </Link>
                   <div>
                     {event.attendees.includes(user) ? (
                       <span class="material-symbols-outlined">person_off</span>
@@ -98,7 +100,7 @@ export default function GenerateEvents({
                     <button onClick={() => handleDelete(event._id)}>X</button>
                   </p>
                 </div>
-              </Link>
+              </>
             );
           })}
         </div>
