@@ -36,3 +36,6 @@
 .bold-header {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 450px) {
+}
