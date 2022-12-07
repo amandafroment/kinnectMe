@@ -8,7 +8,12 @@ const eventsCtrl = require("../../controllers/api/events");
 // // POST /api/events/create
 router.get("/", eventsCtrl.getAllEvents);
 router.post("/create", eventsCtrl.createEvent);
+
 router.get("/:id", eventsCtrl.getDetails);
+
+router.post("/attend", eventsCtrl.eventAddAttendee);
+router.delete("/:id", eventsCtrl.delete);
+
 
 // // POST /api/events/comment
 // router.post("/comment", eventsCtrl.createComment);
@@ -24,7 +29,6 @@ router.get("/:id", eventsCtrl.getDetails);
 // router.put("/comment/:id", eventsCtrl.updateComment);
 
 // // DELETE /api/events/:id
-// router.delete("/:id", eventsCtrl.deleteEvent);
 // // DELETE /api/events/comments/:id
 // router.delete("/comment/:id", eventsCtrl.deleteComment);
 

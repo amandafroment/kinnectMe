@@ -25,6 +25,14 @@ export function getDetails(id) {
   console.log(id, "from events-api");
   return sendRequest(`${BASE_URL}/${id}`);
 }
+export function eventAddAttendee(event) {
+  console.log("event", event);
+  return sendRequest(`${BASE_URL}/attend`, "POST", { eventId: event });
+}
+export function eventRemoveAttendee(event) {
+  console.log("event", event);
+  return sendRequest(`${BASE_URL}/attend`, "DELETE", { eventId: event });
+}
 
 // export function getCommentById() {
 //   return sendRequest(`${BASE_URL}/comment/${id}`);

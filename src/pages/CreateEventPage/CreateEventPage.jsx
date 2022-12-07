@@ -11,14 +11,19 @@ export default function CreateEventPage() {
     <>
       <main className="CreateEventPage">
         <div className="create-events-page-header">
-          <h1>KinnectMe with...</h1>
+
+          <h1>Kinnect Others With...</h1>
+
         </div>
         <CategoryButtons
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
         {selectedCategory === "" ? (
-          <h2>Click a category to start your event planning!</h2>
+          <h2 className="events-planning-message">
+            Click a category to start planning you<br></br> event and kinnecting
+            others to it!
+          </h2>
         ) : (
           <EventForm
             selectedCategory={selectedCategory}

@@ -21,8 +21,9 @@ export default function App() {
             <Routes>
               <Route
                 path="/"
-                element={<FindEventsPage setEvent={setEvent} />}
+                element={<FindEventsPage setEvent={setEvent} user={user} />}
               />
+
               <Route path="/myevents" element={<MyEvents />} />
               {/* // routes is another component that allows us to set up all of our
               different routes, it is a package built into react-router */}
