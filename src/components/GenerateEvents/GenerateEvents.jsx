@@ -63,6 +63,7 @@ export default function GenerateEvents({
                   setEvent(event);
                 }}
                 to={"/" + event._id}
+                className="generate-events-links"
               >
                 <div className="find-event-card">
                   <h2 className="bold-header">{event.name.toUpperCase()}</h2>
@@ -95,7 +96,17 @@ export default function GenerateEvents({
                     )}
                   </div>
                   <p>
-                    <button onClick={() => handleDelete(event._id)}>X</button>
+                    {event.user == user._id && (
+                      <button onClick={() => handleDelete(event._id)}>X</button>
+                    )}
+                  </p>
+                  <p>
+                    {event.user == user._id && (
+                      <button>
+                        {/* onClick={() => handleUpdate(event._id)} */}
+                        Update
+                      </button>
+                    )}
                   </p>
                 </div>
               </Link>
