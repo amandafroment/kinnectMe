@@ -54,7 +54,7 @@ export default function LoginForm({ setUser }) {
           </button>
         </form>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      {error ? <p className="error-message">&nbsp;{error}</p> : <span></span>}
     </div>
   );
 }

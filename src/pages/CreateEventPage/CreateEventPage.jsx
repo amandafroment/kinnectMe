@@ -11,7 +11,9 @@ export default function CreateEventPage() {
     <>
       <main className="CreateEventPage">
         <div className="create-events-page-header">
+
           <h1>Kinnect Others With...</h1>
+
         </div>
         <CategoryButtons
           selectedCategory={selectedCategory}

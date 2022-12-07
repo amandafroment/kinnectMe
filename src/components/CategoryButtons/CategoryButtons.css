@@ -13,6 +13,7 @@
   font-size: 16px;
 }
 
+
 .CategoryButtonContainer > button:hover {
   transform: scale(1.1);
 }

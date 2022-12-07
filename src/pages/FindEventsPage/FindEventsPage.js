@@ -4,7 +4,7 @@ import * as eventsAPI from "../../utilities/events-api";
 import { useEffect, useState } from "react";
 import "./FindEventsPage.css";
 
-export default function FindEventsPage(user) {
+export default function FindEventsPage({ user, setEvent }) {
   const [showAllEvents, setShowAllEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState("");
 
@@ -20,7 +20,6 @@ export default function FindEventsPage(user) {
   useEffect(
     function () {
       async function filterEvents() {
-        console.log(selectedEvent, "selectedEvent");
         if (selectedEvent != "") {
           let events = await eventsAPI.getAllEvents();
           const filteredEvents = events.filter((event) => {
@@ -46,11 +45,12 @@ export default function FindEventsPage(user) {
           setSelectedEvent={setSelectedEvent}
         />
         <GenerateEvents
-          user={user}
+          setEvent={setEvent}
           showAllEvents={showAllEvents}
           setShowAllEvents={setShowAllEvents}
           selectedEvent={selectedEvent}
           setSelectedEvent={setSelectedEvent}
+          user={user}
         />
       </div>
     </>

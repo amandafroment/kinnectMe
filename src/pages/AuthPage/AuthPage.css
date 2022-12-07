@@ -1,5 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
 .AuthPageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  color: #5c6453;
+  border: 5px solid #ccd2c7;
+  border-radius: 25px;
+  height: 25%;
+  margin-top: 25%;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.changing-sign-in-button {
+  padding: 0px 15px;
+  border: 2px solid #bbc3b4;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.changing-sign-in-button > h3 {
+  margin: 5px;
+  color: #9aa590;
+}
+
+.changing-sign-in-button > h3:hover {
+  margin: 5px;
+  color: #5c6453;
+}
+
+.introduction-paragraphs {
+  padding: 15px;
+}
+
+.front-logo {
+  font-family: "Shadows Into Light";
+  font-size: 22px;
+}
+
+.auth-form-page-container {
+  margin: 0;
+  width: 50%;
 }
