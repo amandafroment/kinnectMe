@@ -8,7 +8,7 @@ export default function EventDetailsPage({ event, user, handleDelete }) {
       {event.category}
       {event.comment}
       <Link to={"/" + event._id + "/edit"}>
-        <button>EDIT</button>
+        {event.user == user._id && <button>EDIT</button>}
       </Link>
       <p>
         {event.user == user._id && (
