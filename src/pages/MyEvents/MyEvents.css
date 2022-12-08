@@ -135,145 +135,170 @@
 .generate-events-links:hover {
   color: #bbc3b4;
 }
+.your-event {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  font-weight: bold;
+  font-family: "Shadows Into Light";
+}
 
 @media only screen and (max-width: 450px) {
   .UserEventsPage {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.user-events-page-header {
-  margin-top: 5%;
-  font-family: "Shadows Into Light";
-  font-size: 20px;
-  color: #5c6453;
-}
+  .user-events-page-header {
+    margin-top: 5%;
+    font-family: "Shadows Into Light";
+    font-size: 20px;
+    color: #5c6453;
+  }
 
-.lists-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.created-list-container {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  margin-left: 25px;
-}
-.attending-events-container {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin-left: 25px;
-}
+  .lists-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .created-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-left: 25px;
+  }
+  .attending-events-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 25px;
+  }
 
-.created-events-header {
-  font-family: "Shadows Into Light";
-  font-size: 30px;
-  color: #5c6453;
-}
-.attending-events-header {
-  font-family: "Shadows Into Light";
-  font-size: 30px;
-  color: #5c6453;
-}
-.created-events-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.attending-events-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-}
+  .created-events-header {
+    font-family: "Shadows Into Light";
+    font-size: 30px;
+    color: #5c6453;
+  }
+  .attending-events-header {
+    font-family: "Shadows Into Light";
+    font-size: 30px;
+    color: #5c6453;
+  }
+  .created-events-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .attending-events-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
 
-.created-event-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-items: stretch;
-  border: 2px solid #cbd4c4;
-  padding: 10px 20px 20px 20px;
-  margin: 20px;
-  border-radius: 10px;
-  color: #5c6453;
-  background-color: #cbd4c4;
-  width: 77%;
-  height: 250px;
-}
+  .created-event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: stretch;
+    border: 2px solid #cbd4c4;
+    padding: 10px 20px 20px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #5c6453;
+    background-color: #cbd4c4;
+    width: 77%;
+    height: 250px;
+  }
 
-.user-event-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-items: stretch;
-  border: 2px solid #d7dad5;
-  padding: 10px 20px 20px 20px;
-  margin: 20px;
-  border-radius: 10px;
-  color: #5c6453;
-  background-color: #eef1eb;
-  height: 250px;
-  width: 77%;
-}
+  .user-event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: stretch;
+    border: 2px solid #d7dad5;
+    padding: 10px 20px 20px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #5c6453;
+    background-color: #eef1eb;
+    height: 250px;
+    width: 77%;
+  }
 
-.card-content {
-  display: flex;
-  flex-direction: column;
-  flex-flow: column wrap;
-  padding-top: 0px;
-  margin-left: 15px;
-  flex-grow: 100%;
-  padding: 0px 20px 0px 20px;
-}
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    padding-top: 0px;
+    margin-left: 15px;
+    flex-grow: 100%;
+    padding: 0px 20px 0px 20px;
+  }
 
-.property {
-  display: flex;
-  flex-direction: row;
-  margin-left: 15px;
-  margin-top: 0px;
-  padding-top: 0px;
-  max-width: 80%;
-  justify-content: space-between;
-  justify-self: flex-end;
-}
+  .property {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    margin-top: 0px;
+    padding-top: 0px;
+    max-width: 80%;
+    justify-content: space-between;
+    justify-self: flex-end;
+  }
 
-.bold-key {
-  margin: 0;
-  font-weight: bold;
-}
-.bold-key-attending {
-  margin: 0;
-  font-weight: bold;
-  font-size: 24px;
-}
+  .bold-key {
+    margin: 0;
+    font-weight: bold;
+    width: 45%;
+  }
+  .bold-key-attending {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+  }
 
-.value {
-  display: flex;
-  flex-direction: column;
-}
+  .value {
+    display: flex;
+    flex-direction: column;
+  }
 
-.generate-events-links {
-  color: #5c6453;
-  text-decoration: none;
-}
+  .generate-events-links {
+    color: #5c6453;
+    text-decoration: none;
+  }
 
-.generate-events-links:hover {
-  color: #bbc3b4;
-}
-
+  .generate-events-links:hover {
+    color: #bbc3b4;
+  }
+  .see-details-and-event {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  .your-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    font-family: "Shadows Into Light";
+    width: 45%;
+  }
 }

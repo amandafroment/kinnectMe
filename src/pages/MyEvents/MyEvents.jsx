@@ -72,15 +72,26 @@ export default function MyEvents({
                         <div className="bold-key">Address:</div>{" "}
                         <div className="value">{event.address}</div>
                       </div>
-                    </div>
-                    <div>
-                      <Link
-                        to={"/" + event._id}
-                        className="generate-events-links"
-                        onClick={() => setEvent(event)}
-                      >
-                        <div className="bold-key">SEE DETAILS</div>
-                      </Link>
+                      <div className="property">
+                        <div>
+                          <Link
+                            to={"/" + event._id}
+                            className="generate-events-links"
+                            onClick={() => setEvent(event)}
+                          >
+                            <div className="bold-key">SEE DETAILS</div>
+                          </Link>
+                        </div>
+                        <div className="value">
+                          <div className="your-event">
+                            <span className="your">Your </span>
+                            <div className="material-symbols-outlined">
+                              account_circle
+                            </div>{" "}
+                            <span className="event"> event.</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );

@@ -69,7 +69,7 @@ export default function GenerateEvents({
                   <h2 className="bold-header">{event.name.toUpperCase()}</h2>
                 </Link>
                 <p>
-                  <span className="bold-header">Place:</span>{" "}
+                  <span className="bold-header">Date:</span>{" "}
                   {event.date.slice(0, 10)}
                 </p>
                 <p>
@@ -89,7 +89,13 @@ export default function GenerateEvents({
                 </p>
                 <div>
                   {event.user == user._id ? (
-                    <div>Your Event</div>
+                    <div className="your-event">
+                      <span className="your">Your </span>
+                      <div className="material-symbols-outlined">
+                        account_circle
+                      </div>{" "}
+                      <span className="event"> event.</span>
+                    </div>
                   ) : (
                     <>
                       {event.attendees.some(

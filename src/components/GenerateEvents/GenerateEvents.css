@@ -36,3 +36,13 @@
 .bold-header {
   font-weight: bold;
 }
+
+.your-event {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  font-family: "Shadows Into Light";
+}
