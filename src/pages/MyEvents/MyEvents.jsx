@@ -1,9 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import * as eventsAPI from "../../utilities/events-api";
+import { eventRemoveAttendee } from "../../utilities/events-api";
 import "./MyEvents.css";
 
-export default function MyEvents({ user }) {
+export default function MyEvents({
+  user,
+  setEvent,
+  showAllEvents,
+  setShowAllEvents,
+}) {
   const [userCreated, setUserCreated] = useState([]);
   const [userAttending, setUserAttending] = useState([]);
 
@@ -17,87 +24,138 @@ export default function MyEvents({ user }) {
     fetchUserData();
   }, []);
 
+  function handleRemoveAttendee(event, attendeeId) {
+    event.attendees = event.attendees.filter(
+      (attendee) => attendee._id !== attendeeId
+    );
+    // setShowAllEvents([...showAllEvents, event]);
+    setUserAttending(
+      userAttending.filter((attendedEvent) => attendedEvent._id !== event._id)
+    );
+  }
+
   return (
     <>
       <div className="UserEventsPage">
         <div className="user-events-page-header">
           <h1>I'm kinnected to:</h1>
-          <h2>Events I created:</h2>
         </div>{" "}
-        {userCreated.map((event) => {
-          return (
-            <div className="user-event-card">
-              <h2 className="bold-header">{event.name.toUpperCase()}</h2>
-              <p>
-                <span className="bold-header">Time & Place:</span> {event.date}
-              </p>
-              <p>
-                <span className="bold-header">Location:</span> {event.location}
-              </p>
-              <p>
-                <span className="bold-header">Address:</span> {event.address}
-              </p>
-              <p>
-                <span className="bold-header">All The Details: </span>
-                {event.details}
-              </p>
+        <div className="lists-container">
+          <div className="created-list-container">
+            <div className="created-events-header">Events I created:</div>
+            <div className="created-events-list">
+              {userCreated.map((event) => {
+                console.log(event);
+                return (
+                  <div className="created-event-card" key={event._id}>
+                    <Link
+                      to={"/" + event._id}
+                      className="generate-events-links"
+                      onClick={() => setEvent(event)}
+                    >
+                      <h2 className="bold-key">{event.name.toUpperCase()}</h2>
+                    </Link>
+                    <div className="card-content">
+                      <div className="property">
+                        <div className="bold-key">Date:</div>{" "}
+                        <div className="value">{event.date.slice(0, 10)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Time:</div>{" "}
+                        <div className="value">{event.date.slice(11, 19)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Location:</div>{" "}
+                        <div className="value">{event.location}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Address:</div>{" "}
+                        <div className="value">{event.address}</div>
+                      </div>
+                      <div className="property">
+                        <div>
+                          <Link
+                            to={"/" + event._id}
+                            className="generate-events-links"
+                            onClick={() => setEvent(event)}
+                          >
+                            <div className="bold-key">SEE DETAILS</div>
+                          </Link>
+                        </div>
+                        <div className="value">
+                          <div className="your-event">
+                            <span className="your">Your </span>
+                            <div className="material-symbols-outlined">
+                              account_circle
+                            </div>{" "}
+                            <span className="event"> event.</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
-        <h2>Events I'm kinnected to:</h2>
-        {userAttending.map((event) => {
-          return (
-            <div className="user-event-card">
-              <h2 className="bold-header">{event.name.toUpperCase()}</h2>
-              <p>
-                <span className="bold-header">Time & Place:</span> {event.date}
-              </p>
-              <p>
-                <span className="bold-header">Location:</span> {event.location}
-              </p>
-              <p>
-                <span className="bold-header">Address:</span> {event.address}
-              </p>
-              <p>
-                <span className="bold-header">All The Details: </span>
-                {event.details}
-              </p>
+          </div>
+          <div className="attending-events-container">
+            <div className="attending-events-header">
+              Events I'm kinnected to:
             </div>
-          );
-        })}
+            <div className="attending-events-list">
+              {userAttending.map((event) => {
+                return (
+                  <div className="user-event-card" key={event._id}>
+                    <Link
+                      to={"/" + event._id}
+                      className="generate-events-links"
+                      onClick={() => setEvent(event)}
+                    >
+                      <div className="bold-key-attending">
+                        {event.name.toUpperCase()}
+                      </div>
+                    </Link>
+                    <div className="card-content">
+                      <div className="property">
+                        <div className="bold-key">Date:</div>{" "}
+                        <div className="value">{event.date.slice(0, 10)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Time:</div>{" "}
+                        <div className="value">{event.date.slice(11, 19)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Location:</div>{" "}
+                        <div className="value">{event.location}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-header">Address:</div>{" "}
+                        <div className="value">{event.address}</div>
+                      </div>
+                    </div>
+                    <Link
+                      to={"/" + event._id}
+                      className="generate-events-links"
+                      onClick={() => setEvent(event)}
+                    >
+                      <div className="bold-header">SEE DETAILS</div>
+                    </Link>
+                    <span
+                      className="material-symbols-outlined"
+                      onClick={() => {
+                        eventRemoveAttendee(event._id, user._id);
+                        handleRemoveAttendee(event, user._id);
+                      }}
+                    >
+                      group_remove
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 }
-
-// export default function MyEvents({ user, event }) {
-//   console.log(event)
-
-//   const [showAllForUser, setShowAllForUser] = useState([]);
-//   let userEvents = eventsAPI.getAllForUser();
-//   setShowAllForUser(userEvents);
-//     getEvents();
-
-//     // useEffect(function () {
-//   //   async function getEvents() {
-
-//   // setEvents(events);
-//   //   }
-
-//   // }, []);
-
-//   return (
-//     <>
-//       <div className="UserEventsPage">
-//         <div className="user-events-page-header">
-//           <h1>I'm kinnected to:</h1>
-//         </div>
-//         <UserEvents
-//           showAllForUser={showAllForUser}
-//           setShowAllForUser={setShowAllForUser}
-//           user={user}
-//         />
-//       </div>
-//     </>
-//   );
-// }

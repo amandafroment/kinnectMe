@@ -46,23 +46,19 @@ export default function GenerateEvents({
       <div className="find-events-list">
         <div>
           {showAllEvents.map((event) => {
-            // let isAttending = event.attendees.includes({ _id: user });
             const isAttending = event.attendees.findIndex((element) => {
               if (element._id === user) {
                 console.log("true");
                 return true;
               }
-              console.log(element);
-              console.log("false");
               return false;
             });
             console.log(event.attendees.includes({ _id: user }));
             // console.log(user);
             // console.log(event.attendees[0]);
             return (
-              <div className="find-event-card">
+              <div className="find-event-card" key={event._id}>
                 <Link
-                  key={event._id}
                   onClick={() => {
                     handleDetails(event._id);
                     setEvent(event);
@@ -73,8 +69,12 @@ export default function GenerateEvents({
                   <h2 className="bold-header">{event.name.toUpperCase()}</h2>
                 </Link>
                 <p>
-                  <span className="bold-header">Time & Place:</span>{" "}
-                  {event.date}
+                  <span className="bold-header">Date:</span>{" "}
+                  {event.date.slice(0, 10)}
+                </p>
+                <p>
+                  <span className="bold-header">Time:</span>{" "}
+                  {event.date.slice(11, 19)}
                 </p>
                 <p>
                   <span className="bold-header">Location:</span>{" "}
@@ -88,25 +88,37 @@ export default function GenerateEvents({
                   {event.details}
                 </p>
                 <div>
-                  {event.attendees.some(
-                    (attendee) => attendee._id === user._id
-                  ) ? (
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => {
-                        eventRemoveAttendee(event._id, user._id);
-                        handleRemoveAttendee(event, user._id);
-                      }}
-                    >
-                      person_off
-                    </span>
+                  {event.user == user._id ? (
+                    <div className="your-event">
+                      <span className="your">Your </span>
+                      <div className="material-symbols-outlined">
+                        account_circle
+                      </div>{" "}
+                      <span className="event"> event.</span>
+                    </div>
                   ) : (
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => handleAddAttendee(event, event._id)}
-                    >
-                      person_add
-                    </span>
+                    <>
+                      {event.attendees.some(
+                        (attendee) => attendee._id === user._id
+                      ) ? (
+                        <span
+                          className="material-symbols-outlined"
+                          onClick={() => {
+                            eventRemoveAttendee(event._id, user._id);
+                            handleRemoveAttendee(event, user._id);
+                          }}
+                        >
+                          group_remove
+                        </span>
+                      ) : (
+                        <span
+                          className="material-symbols-outlined"
+                          onClick={() => handleAddAttendee(event, event._id)}
+                        >
+                          person_add
+                        </span>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
