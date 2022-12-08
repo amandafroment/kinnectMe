@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
+
+.details-page-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.details-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  border: 2px solid #bbc3b4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  color: #5c6453;
+}
+
+.details-card-container > h2 {
+  margin: 15px;
+}
+
+.details-card-container > p {
+  margin: 7.5px;
+}
+
+.edit-delete-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.edit-button {
+  padding: 5px;
+  margin: 5px 5px 0px 5px;
+  border: 1px solid #bbc3b4;
+  background-color: white;
+  border-radius: 10px;
+  color: #bbc3b4;
+}
+
+.delete-button {
+  padding: 5px;
+  margin: 5px 5px 0px 5px;
+  border: 1px solid #bbc3b4;
+  background-color: white;
+  border-radius: 10px;
+  color: #bbc3b4;
+}
+
+.comment-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #bbc3b4;
+  background-color: white;
+  border-radius: 10px;
+  width: 50vw;
+  height: 60vh;
+  overflow-y: scroll;
+  position: relative;
+  margin: 7.5px;
+  color: #5c6453;
+}
+
+.comments-form-container > h2 {
+  font-family: "Shadows Into Light";
+  font-size: 2em;
+  color: #5c6453;
+}
+
+.comment > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.user-span {
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+.comment-span {
+  color: #bbc3b4;
+  font-weight: bold;
+}
+
+.comment-box-container > form {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  color: #5c6453;
+}
+
+.comment-form > input {
+  padding: 5px;
+  width: 50%;
+  border: 2px solid #bbc3b4;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.comment-form > button {
+  padding: 5px;
+  width: 125px;
+  border: 2px solid #bbc3b4;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: #5c6453;
+}
