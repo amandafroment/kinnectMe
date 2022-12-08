@@ -3,13 +3,11 @@ import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { eventRemoveAttendee } from "../../utilities/events-api";
 
 export default function GenerateEvents({
   showAllEvents,
   setShowAllEvents,
-  selectedEvent,
   user,
   setEvent,
 }) {
@@ -19,7 +17,6 @@ export default function GenerateEvents({
     try {
       let detail = await eventsAPI.getDetails(id);
     } catch (err) {
-      console.log(err);
       setError("Get Detail Event failed - Try Again");
     }
   }
@@ -46,14 +43,11 @@ export default function GenerateEvents({
           {showAllEvents.map((event) => {
             const isAttending = event.attendees.findIndex((element) => {
               if (element._id === user) {
-                console.log("true");
                 return true;
               }
               return false;
             });
             console.log(event.attendees.includes({ _id: user }));
-            // console.log(user);
-            // console.log(event.attendees[0]);
             return (
               <div className="find-event-card" key={event._id}>
                 <Link

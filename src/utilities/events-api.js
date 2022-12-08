@@ -7,7 +7,6 @@ export function createAddEvent(formData) {
   return sendRequest(`${BASE_URL}/create`, "POST", formData);
 }
 export async function createComment(comment, id) {
-  // console.log(id, comment);
   return sendRequest(`${BASE_URL}/${id}/comment`, "POST", comment);
 }
 
