@@ -102,9 +102,20 @@
 .user-event-card > h2 {
   margin: 10px;
 }
-
-.bold-header {
+.property {
+  display: flex;
+  flex-direction: row;
+}
+.bold-key {
+  display: flex;
+  flex-direction: column;
   font-weight: bold;
+  align-items: flex-start;
+}
+.value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .generate-events-links {

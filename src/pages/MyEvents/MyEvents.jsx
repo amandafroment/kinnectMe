@@ -5,7 +5,12 @@ import * as eventsAPI from "../../utilities/events-api";
 import { eventRemoveAttendee } from "../../utilities/events-api";
 import "./MyEvents.css";
 
-export default function MyEvents({ user, setEvent, showAllEvents, setShowAllEvents }) {
+export default function MyEvents({
+  user,
+  setEvent,
+  showAllEvents,
+  setShowAllEvents,
+}) {
   const [userCreated, setUserCreated] = useState([]);
   const [userAttending, setUserAttending] = useState([]);
 
@@ -49,19 +54,21 @@ export default function MyEvents({ user, setEvent, showAllEvents, setShowAllEven
                         {event.name.toUpperCase()}
                       </h2>
                     </Link>
-                    <p>
-                      <span className="bold-header">Time & Place:</span>{" "}
-                      {event.date}
-                    </p>
-                    <p>
-                      <span className="bold-header">Location:</span>{" "}
-                      {event.location}
-                    </p>
-                    <p>
-                      <span className="bold-header">Address:</span>{" "}
-                      {event.address}
-                    </p>
-                    <p>
+                    <div className="card-content">
+                      <div className="property">
+                        <div className="bold-header">Time & Place:</div>{" "}
+                        <div>{event.date.slice(0, 15)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Location:</div>{" "}
+                        <div className="value">{event.location}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-header">Address:</div>{" "}
+                        <div>{event.address}</div>
+                      </div>
+                    </div>
+                    <div>
                       <Link
                         key={event._id}
                         to={"/" + event._id}
@@ -69,7 +76,7 @@ export default function MyEvents({ user, setEvent, showAllEvents, setShowAllEven
                       >
                         <span className="bold-header">SEE DETAILS</span>
                       </Link>
-                    </p>
+                    </div>
                   </div>
                 </div>
               );
@@ -92,27 +99,29 @@ export default function MyEvents({ user, setEvent, showAllEvents, setShowAllEven
                         {event.name.toUpperCase()}
                       </h2>
                     </Link>
-                    <p>
-                      <span className="bold-header">Time & Place:</span>{" "}
-                      {event.date}
-                    </p>
-                    <p>
-                      <span className="bold-header">Location:</span>{" "}
-                      {event.location}
-                    </p>
-                    <p>
-                      <span className="bold-header">Address:</span>{" "}
-                      {event.address}
-                    </p>
-                    <p>
-                      <Link
-                        key={event._id}
-                        to={"/" + event._id}
-                        className="generate-events-links"
-                      >
-                        <span className="bold-header">SEE DETAILS</span>
-                      </Link>
-                    </p>
+                    <div className="card-content">
+                      <div className="property">
+                        <div className="bold-header">Time & Place:</div>{" "}
+                        <div>{event.date.slice(0, 15)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Location:</div>{" "}
+                        <div className="value">{event.location}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-header">Address:</div>{" "}
+                        <div>{event.address}</div>
+                      </div>
+                      <div className="property">
+                        <Link
+                          key={event._id}
+                          to={"/" + event._id}
+                          className="generate-events-links"
+                        >
+                          <span className="bold-header">SEE DETAILS</span>
+                        </Link>
+                      </div>
+                    </div>
                     <span
                       className="material-symbols-outlined"
                       onClick={() => {
