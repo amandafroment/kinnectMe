@@ -47,4 +47,10 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .AuthPageContainer {
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 30%;
+    width: 75%;
+  }
 }

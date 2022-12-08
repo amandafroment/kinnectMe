@@ -12,7 +12,8 @@
 .EventFormDivContainer {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 60vw;
+  margin-bottom: 10%;
 }
 
 .EventForm {
@@ -58,4 +59,62 @@
 .EventForm > button:hover {
   background-color: white;
   color: rgb(170, 180, 161);
+}
+
+@media only screen and (max-width: 450px) {
+  .SelectedEventsHeaderContainer {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .SelectedEventsHeaderContainer > h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .EventFormDivContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .EventForm {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 25px;
+    color: #5c6453;
+    width: 72vw;
+  }
+
+  .EventForm > label {
+    font-size: 18px;
+    margin: 15px 0px;
+    font-weight: bold;
+  }
+
+  .EventForm > input {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px white;
+  }
+
+  .details-input {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #5c6453;
+  }
+
+  .EventForm > button {
+    margin-top: 25px;
+    padding: 10px;
+    align-self: center;
+    border-radius: 10px;
+    border: 2px solid #5c6453;
+    font-size: 15px;
+    font-weight: bold;
+    color: #5c6453;
+  }
 }

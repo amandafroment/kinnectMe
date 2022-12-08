@@ -13,7 +13,6 @@
   font-size: 16px;
 }
 
-
 .CategoryButtonContainer > button:hover {
   transform: scale(1.1);
 }
@@ -32,4 +31,22 @@
 
 .different-event {
   border: 3px solid #889081;
+}
+
+@media only screen and (max-width: 450px) {
+  .CategoryButtonContainer {
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    margin-top: 5px;
+  }
+
+  .CategoryButtonContainer > button {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+    color: #5c6453;
+    font-family: Mulish;
+    font-size: 14px;
+  }
 }

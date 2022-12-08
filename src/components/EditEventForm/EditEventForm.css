@@ -1,18 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
 
-.SelectedEventsHeaderContainer {
-  margin-bottom: 15px;
-}
-
-.SelectedEventsHeaderContainer > h1 {
-  font-family: Mulish;
+.edit-header {
+  margin-top: 25px;
   color: #5c6453;
 }
 
-.EventFormDivContainer {
+.edit-header > h1 {
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+.edit-header-name {
+  font-family: "Shadows Into Light";
+  font-size: 40px;
+}
+
+.EditFormDivContainer {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 60vw;
+  background-color: #ccd2c7;
+  border-radius: 25px;
+  margin-top: 5px;
+  margin-bottom: 10%;
 }
 
 .EventForm {
@@ -33,6 +43,8 @@
   padding: 10px;
   border-radius: 10px;
   border: solid 2px white;
+  font-size: 16px;
+  color: #5c6453;
 }
 
 .details-input {
@@ -58,4 +70,26 @@
 .EventForm > button:hover {
   background-color: white;
   color: rgb(170, 180, 161);
+}
+
+@media only screen and (max-width: 450px) {
+  .EditFormDivContainer {
+    width: 95vw;
+    border-radius: 25px;
+    margin-top: 0px;
+  }
+
+  .edit-header {
+    margin-top: 5px;
+  }
+
+  .edit-header > h1 {
+    font-size: 22px;
+  }
+
+  .edit-header-name {
+    font-family: "Shadows Into Light";
+    font-size: 32px;
+    margin-bottom: 0px;
+  }
 }
