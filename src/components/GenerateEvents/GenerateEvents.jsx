@@ -57,9 +57,8 @@ export default function GenerateEvents({
             // console.log(user);
             // console.log(event.attendees[0]);
             return (
-              <div className="find-event-card">
+              <div className="find-event-card" key={event._id}>
                 <Link
-                  key={event._id}
                   onClick={() => {
                     handleDetails(event._id);
                     setEvent(event);
@@ -89,25 +88,31 @@ export default function GenerateEvents({
                   {event.details}
                 </p>
                 <div>
-                  {event.attendees.some(
-                    (attendee) => attendee._id === user._id
-                  ) ? (
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => {
-                        eventRemoveAttendee(event._id, user._id);
-                        handleRemoveAttendee(event, user._id);
-                      }}
-                    >
-                      group_remove
-                    </span>
+                  {event.user == user._id ? (
+                    <div>Your Event</div>
                   ) : (
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => handleAddAttendee(event, event._id)}
-                    >
-                      person_add
-                    </span>
+                    <>
+                      {event.attendees.some(
+                        (attendee) => attendee._id === user._id
+                      ) ? (
+                        <span
+                          className="material-symbols-outlined"
+                          onClick={() => {
+                            eventRemoveAttendee(event._id, user._id);
+                            handleRemoveAttendee(event, user._id);
+                          }}
+                        >
+                          group_remove
+                        </span>
+                      ) : (
+                        <span
+                          className="material-symbols-outlined"
+                          onClick={() => handleAddAttendee(event, event._id)}
+                        >
+                          person_add
+                        </span>
+                      )}
+                    </>
                   )}
                 </div>
               </div>

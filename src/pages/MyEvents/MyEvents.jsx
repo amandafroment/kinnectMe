@@ -28,7 +28,10 @@ export default function MyEvents({
     event.attendees = event.attendees.filter(
       (attendee) => attendee._id !== attendeeId
     );
-    setShowAllEvents([...showAllEvents, event]);
+    // setShowAllEvents([...showAllEvents, event]);
+    setUserAttending(
+      userAttending.filter((attendedEvent) => attendedEvent._id !== event._id)
+    );
   }
 
   return (
@@ -40,13 +43,12 @@ export default function MyEvents({
         <div className="lists-container">
           <div className="created-list-container">
             <div className="created-events-header">Events I created:</div>
-            {userCreated.map((event) => {
-              console.log(event);
-              return (
-                <div className="created-events-list">
-                  <div className="created-event-card">
+            <div className="created-events-list">
+              {userCreated.map((event) => {
+                console.log(event);
+                return (
+                  <div className="created-event-card" key={event._id}>
                     <Link
-                      key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
                       onClick={() => setEvent(event)}
@@ -73,7 +75,6 @@ export default function MyEvents({
                     </div>
                     <div>
                       <Link
-                        key={event._id}
                         to={"/" + event._id}
                         className="generate-events-links"
                         onClick={() => setEvent(event)}
@@ -82,9 +83,9 @@ export default function MyEvents({
                       </Link>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <div className="attending-events-container">
             <div className="attending-events-header">
@@ -93,9 +94,8 @@ export default function MyEvents({
             <div className="attending-events-list">
               {userAttending.map((event) => {
                 return (
-                  <div className="user-event-card">
+                  <div className="user-event-card" key={event._id}>
                     <Link
-                      key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
                       onClick={() => setEvent(event)}
@@ -123,14 +123,21 @@ export default function MyEvents({
                       </div>
                     </div>
                     <Link
-                      key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
                       onClick={() => setEvent(event)}
-
                     >
                       <div className="bold-header">SEE DETAILS</div>
                     </Link>
+                    <span
+                      className="material-symbols-outlined"
+                      onClick={() => {
+                        eventRemoveAttendee(event._id, user._id);
+                        handleRemoveAttendee(event, user._id);
+                      }}
+                    >
+                      group_remove
+                    </span>
                   </div>
                 );
               })}

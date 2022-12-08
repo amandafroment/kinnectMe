@@ -1,6 +1,5 @@
 const Event = require("../../models/event");
 
-
 // // get all events that are created
 async function getAllEvents(req, res) {
   const events = await Event.find({});
@@ -51,7 +50,9 @@ async function eventAddAttendee(req, res) {
   try {
     console.log(req.body);
     const event = await Event.findById(req.body.eventId);
-    event.addAttendee(req.user._id);
+    if (event.user !== req.user._id) {
+      event.addAttendee(req.user._id);
+    }
     res.json(event);
   } catch (error) {
     console.log("error", error);
