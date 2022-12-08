@@ -45,6 +45,7 @@
   align-content: center;
   align-self: center;
   font-family: "Shadows Into Light";
+}
 
 @media only screen and (max-width: 450px) {
   .find-events-list {
