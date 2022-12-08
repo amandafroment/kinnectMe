@@ -50,22 +50,28 @@ export default function MyEvents({
                       to={"/" + event._id}
                       className="generate-events-links"
                     >
-                      <h2 className="bold-header">
-                        {event.name.toUpperCase()}
-                      </h2>
+                      <h2 className="bold-key">{event.name.toUpperCase()}</h2>
                     </Link>
                     <div className="card-content">
                       <div className="property">
-                        <div className="bold-header">Time & Place:</div>{" "}
-                        <div>{event.date.slice(0, 15)}</div>
+                        <div className="bold-key">Date:</div>{" "}
+                        <div className="value">
+                          {event.date.slice(0, 10)}
+                        </div>
+                      <div className="property">
+                        <div className="bold-key">Time:</div>{" "}
+                        <div className="value">
+                          {event.date.slice(11, 20)}
+                        </div>
+                      </div>
                       </div>
                       <div className="property">
                         <div className="bold-key">Location:</div>{" "}
                         <div className="value">{event.location}</div>
                       </div>
                       <div className="property">
-                        <div className="bold-header">Address:</div>{" "}
-                        <div>{event.address}</div>
+                        <div className="bold-key">Address:</div>{" "}
+                        <div className="value">{event.address}</div>
                       </div>
                     </div>
                     <div>
@@ -74,7 +80,7 @@ export default function MyEvents({
                         to={"/" + event._id}
                         className="generate-events-links"
                       >
-                        <span className="bold-header">SEE DETAILS</span>
+                        <div className="bold-key">SEE DETAILS</div>
                       </Link>
                     </div>
                   </div>
@@ -95,14 +101,14 @@ export default function MyEvents({
                       to={"/" + event._id}
                       className="generate-events-links"
                     >
-                      <h2 className="bold-header">
-                        {event.name.toUpperCase()}
-                      </h2>
+                      <h2 className="bold-key">{event.name.toUpperCase()}</h2>
                     </Link>
                     <div className="card-content">
                       <div className="property">
                         <div className="bold-header">Time & Place:</div>{" "}
-                        <div>{event.date.slice(0, 15)}</div>
+                        <div className="value">
+                          {event.date.slice(0, 16).split("T")}
+                        </div>
                       </div>
                       <div className="property">
                         <div className="bold-key">Location:</div>{" "}
@@ -110,7 +116,7 @@ export default function MyEvents({
                       </div>
                       <div className="property">
                         <div className="bold-header">Address:</div>{" "}
-                        <div>{event.address}</div>
+                        <div className="value">{event.address}</div>
                       </div>
                       <div className="property">
                         <Link
@@ -118,7 +124,7 @@ export default function MyEvents({
                           to={"/" + event._id}
                           className="generate-events-links"
                         >
-                          <span className="bold-header">SEE DETAILS</span>
+                          <div className="bold-header">SEE DETAILS</div>
                         </Link>
                       </div>
                     </div>

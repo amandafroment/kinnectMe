@@ -92,7 +92,6 @@ export default function EventForm({ selectedCategory }) {
             value={formData.date}
             name="date"
             required
-            // min={Date.now - 24 * 60 * 60 * 1000}
             onChange={handleChangeForm}
             className="date-and-time-input"
           />

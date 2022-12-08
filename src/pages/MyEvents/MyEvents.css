@@ -102,9 +102,16 @@
 .user-event-card > h2 {
   margin: 10px;
 }
+.card-content {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 20px;
+  
+}
 .property {
   display: flex;
   flex-direction: row;
+  
 }
 .bold-key {
   display: flex;
