@@ -83,8 +83,8 @@ export default function GenerateEvents({
                 <p>
                   <span className="bold-header">Address:</span> {event.address}
                 </p>
-                <p>
-                  <span className="bold-header">All The Details: </span>
+                <p className="details-text">
+                  <span className="bold-header">All The Details: </span>{" "}
                   {event.details}
                 </p>
                 <div>

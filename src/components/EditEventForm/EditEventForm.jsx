@@ -65,11 +65,13 @@ export default function EditEventForm({ selectedCategory, event }) {
   }
   return (
     <>
-      <div className="SelectedEventsHeaderContainer">
-        <h1>{selectedCategory}</h1>
+      <div className="edit-header">
+        <h1>EDITTING IN PROGRESS... </h1>
+        <h2>
+          <span className="edit-header-name">{event.name.toUpperCase()}</span>
+        </h2>
       </div>
-
-      <div className="EventFormDivContainer">
+      <div className="EditFormDivContainer">
         <form
           onSubmit={handleSubmitForm}
           style={{

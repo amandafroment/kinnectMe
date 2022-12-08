@@ -27,7 +27,9 @@ export default function NavBar({ user, setUser }) {
           My Events
         </Link>
 
-        {user && <span className="links">Welcome, {user.name}</span>}
+        {user && (
+          <span className="links welcome-user">Welcome, {user.name}</span>
+        )}
 
         <Link to="" onClick={handleLogOut} className="links">
           <span className="material-symbols-outlined">logout</span>
