@@ -15,7 +15,6 @@ export default function GenerateEvents({
   const [error, setError] = useState("");
 
   async function handleDetails(evt) {
-    console.log(evt);
     try {
       let detail = await eventsAPI.getDetails(evt);
     } catch (err) {

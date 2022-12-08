@@ -21,10 +21,6 @@ async function createComment(req, res) {
   event.comments.push(req.body);
   event.save();
   res.status(200).json(event);
-  // await search.comment.push(req.body.com);
-
-  // console.log(search, "THis is search");
-  // console.log(req.body, "within the controller");
 }
 
 async function getDetails(req, res) {

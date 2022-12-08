@@ -32,8 +32,8 @@ export default function EventDetailsPage({ event }) {
         {event.comment}
         {event._id}
         {event.details}
-        {comments.map((comment) => {
-          return <div>{comment.comment}</div>;
+        {comments.map((comment, idx) => {
+          return <div key={idx}>{comment.comment}</div>;
         })}
 
         <h1>Comment Box</h1>
