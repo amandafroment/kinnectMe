@@ -55,15 +55,11 @@ export default function MyEvents({
                     <div className="card-content">
                       <div className="property">
                         <div className="bold-key">Date:</div>{" "}
-                        <div className="value">
-                          {event.date.slice(0, 10)}
-                        </div>
+                        <div className="value">{event.date.slice(0, 10)}</div>
+                      </div>
                       <div className="property">
                         <div className="bold-key">Time:</div>{" "}
-                        <div className="value">
-                          {event.date.slice(11, 20)}
-                        </div>
-                      </div>
+                        <div className="value">{event.date.slice(11, 19)}</div>
                       </div>
                       <div className="property">
                         <div className="bold-key">Location:</div>{" "}
@@ -101,14 +97,18 @@ export default function MyEvents({
                       to={"/" + event._id}
                       className="generate-events-links"
                     >
-                      <h2 className="bold-key">{event.name.toUpperCase()}</h2>
+                      <div className="bold-key-attending">
+                        {event.name.toUpperCase()}
+                      </div>
                     </Link>
                     <div className="card-content">
                       <div className="property">
-                        <div className="bold-header">Time & Place:</div>{" "}
-                        <div className="value">
-                          {event.date.slice(0, 16).split("T")}
-                        </div>
+                        <div className="bold-key">Date:</div>{" "}
+                        <div className="value">{event.date.slice(0, 10)}</div>
+                      </div>
+                      <div className="property">
+                        <div className="bold-key">Time:</div>{" "}
+                        <div className="value">{event.date.slice(11, 19)}</div>
                       </div>
                       <div className="property">
                         <div className="bold-key">Location:</div>{" "}
@@ -118,26 +118,16 @@ export default function MyEvents({
                         <div className="bold-header">Address:</div>{" "}
                         <div className="value">{event.address}</div>
                       </div>
-                      <div className="property">
-                        <Link
-                          key={event._id}
-                          to={"/" + event._id}
-                          className="generate-events-links"
-                        >
-                          <div className="bold-header">SEE DETAILS</div>
-                        </Link>
-                      </div>
                     </div>
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => {
-                        eventRemoveAttendee(event._id, user._id);
-                        handleRemoveAttendee(event, user._id);
-                      }}
+                    <Link
+                      key={event._id}
+                      to={"/" + event._id}
+                      className="generate-events-links"
                     >
-                      group_remove
-                    </span>
+                      <div className="bold-header">SEE DETAILS</div>
+                    </Link>
                   </div>
+                               
                 );
               })}
             </div>
