@@ -96,15 +96,15 @@
   flex-direction: column;
   flex-flow: column wrap;
   padding-top: 0px;
-  margin-left: 15px;
-  flex-grow: 100%;
-  padding: 0px 20px 0px 20px;
+  margin-left: 10px;
+
+  padding: 0px 15px 0px 15px;
 }
 
 .property {
   display: flex;
   flex-direction: row;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: 0px;
   padding-top: 0px;
   max-width: 80%;
@@ -155,7 +155,6 @@
 .lists-container {
   display: flex;
   flex-direction: column;
-  
   width: 100%;
 }
 .created-list-container {
@@ -165,11 +164,13 @@
   justify-content: center;
   align-items: center;
   justify-items: center;
+  margin-left: 25px;
 }
 .attending-events-container {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 80%;
+  margin-left: 25px;
 }
 
 .created-events-header {
