@@ -23,25 +23,26 @@ export default function EventDetailsPage({ event, user, handleDelete }) {
   }
   return (
     <>
-      <div>
-        <h1> Details Page</h1>
-        {event.name}
-        {event.category}
-        {event.comment}
-        {event._id}
-        {event.details}
+      <div className="details-page-container">
+        <div className="details-card-container">
+          {" "}
+          <h1> {event.name}</h1>
+          {event.category}
+          {event.comment}
+          {event.details}
+          <Link to={"/" + event._id + "/edit"}>
+            {event.user == user._id && <button>EDIT</button>}
+          </Link>
+          <p>
+            {event.user == user._id && (
+              <button onClick={() => handleDelete(event._id)}>X</button>
+            )}
+          </p>
+        </div>
+
         {comments.map((comment, idx) => {
           return <div key={idx}>{comment.comment}</div>;
         })}
-
-        <Link to={"/" + event._id + "/edit"}>
-          {event.user == user._id && <button>EDIT</button>}
-        </Link>
-        <p>
-          {event.user == user._id && (
-            <button onClick={() => handleDelete(event._id)}>X</button>
-          )}
-        </p>
 
         <h1>Comment Box</h1>
 
