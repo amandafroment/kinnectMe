@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+
 export default function EventDetailsPage({ event, user, handleDelete }) {
+
+  
   console.log(user);
   return (
     <>

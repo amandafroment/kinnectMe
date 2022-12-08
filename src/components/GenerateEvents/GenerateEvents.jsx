@@ -95,7 +95,7 @@ export default function GenerateEvents({
                         handleRemoveAttendee(event, user._id);
                       }}
                     >
-                      person_off
+                      group_remove
                     </span>
                   ) : (
                     <span

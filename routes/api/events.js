@@ -18,8 +18,7 @@ router.put("/:id", eventsCtrl.update);
 // GET /api/events
 router.get("/", eventsCtrl.getAllEvents);
 
-// GET /api/events/detail
-// router.get("/detail", eventsCtrl.eventDetail);
+
 
 // // EDIT /api/events/:id
 // router.put("/:id", eventsCtrl.updateEvent);

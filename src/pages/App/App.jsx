@@ -11,6 +11,7 @@ import MyEvents from "../MyEvents/MyEvents";
 import EditEventForm from "../../components/EditEventForm/EditEventForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -30,6 +31,7 @@ export default function App() {
         {user ? (
           <>
             <NavBar user={user} setUser={setUser} />
+
             <Routes>
               <Route
                 path="/"
@@ -42,7 +44,18 @@ export default function App() {
                   />
                 }
               />
-              <Route path="/myevents" element={<MyEvents user={user} />} />
+              <Route
+                path="/myevents"
+                element={
+                  <MyEvents
+                    user={user}
+                    event={event}
+                    setEvent={setEvent}
+                    showAllEvents={showAllEvents}
+                    setShowAllEvents={setShowAllEvents}
+                  />
+                }
+              />
               {/* // routes is another component that allows us to set up all of our
               different routes, it is a package built into react-router */}
               <Route
@@ -66,9 +79,13 @@ export default function App() {
                 element={<EditEventForm event={event} />}
               />
             </Routes>
+            <Footer />
           </>
         ) : (
-          <AuthPage setUser={setUser} />
+          <>
+            <AuthPage setUser={setUser} />
+            <Footer />
+          </>
         )}
       </main>
     </>

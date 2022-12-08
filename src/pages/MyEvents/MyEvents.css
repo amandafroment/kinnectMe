@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -16,18 +16,61 @@
   color: #5c6453;
 }
 
+.lists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.attending-events-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.created-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.created-events-header {
+  font-family: "Shadows Into Light";
+  font-size: 30px;
+  color: #5c6453;
+}
+.attending-events-header {
+  font-family: "Shadows Into Light";
+  font-size: 30px;
+  color: #5c6453;
+}
 .created-events-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 55%;
-  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
 }
 .attending-events-list {
   display: flex;
-  flex-direction: row;
-  width: 55%;
-  margin-top: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.created-event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #cbd4c4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  color: #5c6453;
+  background-color: #cbd4c4;
+  width: 75%;
+  height: 250px;
 }
 
 .user-event-card {
@@ -39,6 +82,8 @@
   margin: 20px;
   border-radius: 10px;
   color: #5c6453;
+  width: 75%;
+  height: 250px;
 }
 
 .generate-events-links {

@@ -1,5 +1,5 @@
 const Event = require("../../models/event");
-// const User = require("../../models/user");
+
 
 // // get all events that are created
 async function getAllEvents(req, res) {
