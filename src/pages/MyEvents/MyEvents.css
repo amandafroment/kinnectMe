@@ -81,11 +81,12 @@
   justify-content: space-evenly;
   justify-items: center;
   align-items: stretch;
-  border: 2px solid #bbc3b4;
+  border: 2px solid #d7dad5;
   padding: 10px 20px 20px 20px;
   margin: 20px;
   border-radius: 10px;
   color: #5c6453;
+  background-color: #eef1eb;
   height: 250px;
   width: 77%;
 }
