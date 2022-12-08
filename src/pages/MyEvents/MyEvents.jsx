@@ -49,6 +49,7 @@ export default function MyEvents({
                       key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
+                      onClick={() => setEvent(event)}
                     >
                       <h2 className="bold-key">{event.name.toUpperCase()}</h2>
                     </Link>
@@ -75,6 +76,7 @@ export default function MyEvents({
                         key={event._id}
                         to={"/" + event._id}
                         className="generate-events-links"
+                        onClick={() => setEvent(event)}
                       >
                         <div className="bold-key">SEE DETAILS</div>
                       </Link>
@@ -96,6 +98,7 @@ export default function MyEvents({
                       key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
+                      onClick={() => setEvent(event)}
                     >
                       <div className="bold-key-attending">
                         {event.name.toUpperCase()}
@@ -123,11 +126,12 @@ export default function MyEvents({
                       key={event._id}
                       to={"/" + event._id}
                       className="generate-events-links"
+                      onClick={() => setEvent(event)}
+
                     >
                       <div className="bold-header">SEE DETAILS</div>
                     </Link>
                   </div>
-                               
                 );
               })}
             </div>
