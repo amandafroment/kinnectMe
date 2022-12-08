@@ -15,12 +15,12 @@ async function createEvent(req, res) {
   res.json(event);
 }
 
-
 async function createComment(req, res) {
   let event = await Event.findById(req.params.id);
   event.comments.push(req.body);
   event.save();
   res.status(200).json(event);
+}
 
 async function updateEvent(req, res) {
   let updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body);
@@ -34,7 +34,6 @@ async function getDetails(req, res) {
   });
 }
 
-
 async function getAllForUser(req, res) {
   const eventsCreated = await Event.find({ user: req.user._id }).sort();
   const allEvents = await Event.find({});
@@ -46,25 +45,22 @@ async function getAllForUser(req, res) {
       }
     });
   });
-  console.log(eventsAttending);
   res.json([eventsCreated, eventsAttending]);
 }
 
 //  add attendee
 async function eventAddAttendee(req, res) {
   try {
-    console.log(req.body);
     const event = await Event.findById(req.body.eventId);
     if (event.user !== req.user._id) {
       event.addAttendee(req.user._id);
     }
     res.json(event);
   } catch (error) {
-    console.log("error", error);
     res.json(error);
   }
 }
-  
+
 // remove attendee
 async function eventRemoveAttendee(req, res) {
   try {
@@ -84,7 +80,6 @@ async function eventRemoveAttendee(req, res) {
     // event.removeAttendee(req.user._id);
     res.json(event);
   } catch (error) {
-    console.log("error", error);
     res.json(error);
   }
 }

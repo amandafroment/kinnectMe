@@ -1,7 +1,6 @@
-import { useState } from "react";
 import "./FindEventButtons.css";
 
-export default function FindEventButtons({ selectedEvent, setSelectedEvent }) {
+export default function FindEventButtons({ setSelectedEvent }) {
   return (
     <>
       <div className="FindEventsButtonContainer">

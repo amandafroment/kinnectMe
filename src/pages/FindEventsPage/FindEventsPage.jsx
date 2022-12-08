@@ -16,7 +16,6 @@ export default function FindEventsPage({
     async function getEvents() {
       let events = await eventsAPI.getAllEvents();
       setShowAllEvents(events);
-      console.log(events, "events");
     }
     getEvents();
   }, []);
@@ -27,7 +26,6 @@ export default function FindEventsPage({
         if (selectedEvent != "") {
           let events = await eventsAPI.getAllEvents();
           const filteredEvents = events.filter((event) => {
-            console.log(event, selectedEvent);
             return event.category === selectedEvent;
           });
           setShowAllEvents(filteredEvents);

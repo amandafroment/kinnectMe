@@ -32,7 +32,6 @@ export default function EventForm({ selectedCategory }) {
       setFormData(formData);
       navigate("/");
     } catch (err) {
-      console.log(err);
       setError("Create Event Failed - Try Again");
     }
   }

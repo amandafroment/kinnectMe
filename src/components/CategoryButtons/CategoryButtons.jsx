@@ -1,10 +1,6 @@
-import { useState } from "react";
 import "./CategoryButtons.css";
 
-export default function CategoryButtons({
-  selectedCategory,
-  setSelectedCategory,
-}) {
+export default function CategoryButtons({ setSelectedCategory }) {
   return (
     <>
       <div className="CategoryButtonContainer">

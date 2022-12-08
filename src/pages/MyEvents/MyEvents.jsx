@@ -5,12 +5,7 @@ import * as eventsAPI from "../../utilities/events-api";
 import { eventRemoveAttendee } from "../../utilities/events-api";
 import "./MyEvents.css";
 
-export default function MyEvents({
-  user,
-  setEvent,
-  showAllEvents,
-  setShowAllEvents,
-}) {
+export default function MyEvents({ user, setEvent }) {
   const [userCreated, setUserCreated] = useState([]);
   const [userAttending, setUserAttending] = useState([]);
 
@@ -19,7 +14,6 @@ export default function MyEvents({
       let userEvents = await eventsAPI.getAllForUser();
       setUserCreated(userEvents[0]);
       setUserAttending(userEvents[1]);
-      console.log(userEvents);
     }
     fetchUserData();
   }, []);
@@ -28,7 +22,6 @@ export default function MyEvents({
     event.attendees = event.attendees.filter(
       (attendee) => attendee._id !== attendeeId
     );
-    // setShowAllEvents([...showAllEvents, event]);
     setUserAttending(
       userAttending.filter((attendedEvent) => attendedEvent._id !== event._id)
     );

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Navigate, Link } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import * as eventsAPI from "../../utilities/events-api";
 
 export default function EventDetailsPage({ event, user, handleDelete }) {
@@ -12,10 +12,8 @@ export default function EventDetailsPage({ event, user, handleDelete }) {
     try {
       await eventsAPI.createComment({ comment }, event._id);
       setComments([...comments, { comment }]);
-
       setComment("");
     } catch (err) {
-      console.log(err);
       setError("Adding a comment has failed. Try Again.");
     }
   }
@@ -36,14 +34,14 @@ export default function EventDetailsPage({ event, user, handleDelete }) {
           return <div key={idx}>{comment.comment}</div>;
         })}
 
-      <Link to={"/" + event._id + "/edit"}>
-        {event.user == user._id && <button>EDIT</button>}
-      </Link>
-      <p>
-        {event.user == user._id && (
-          <button onClick={() => handleDelete(event._id)}>X</button>
-        )}
-      </p>
+        <Link to={"/" + event._id + "/edit"}>
+          {event.user == user._id && <button>EDIT</button>}
+        </Link>
+        <p>
+          {event.user == user._id && (
+            <button onClick={() => handleDelete(event._id)}>X</button>
+          )}
+        </p>
 
         <h1>Comment Box</h1>
 
