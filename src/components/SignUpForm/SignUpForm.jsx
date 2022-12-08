@@ -12,20 +12,16 @@ export class SignUpForm extends Component {
   };
 
   handleChange = (e) => {
-    //it will take our existing state and identify the differences
     this.setState({
-      [e.target.name]: e.target.value, //the name key will be updated, and doesnt touch anything else in our state object
+      [e.target.name]: e.target.value,
       error: "",
     });
   };
 
   handleSubmit = async (e) => {
-    // Prevent form from being submitted to the server
     e.preventDefault();
     try {
-      // We don't want to send the 'error' or 'confirm' property,
-      //  so let's make a copy of the state object, then delete them
-      const formData = { ...this.state }; // we don't want to mutate state/the original object, so we're creating a new object to mutate/change it by putting it in a variable
+      const formData = { ...this.state };
       delete formData.error;
       delete formData.confirm;
 

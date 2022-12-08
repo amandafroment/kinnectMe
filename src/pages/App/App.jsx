@@ -56,8 +56,7 @@ export default function App() {
                   />
                 }
               />
-              {/* // routes is another component that allows us to set up all of our
-              different routes, it is a package built into react-router */}
+
               <Route
                 path="/:id"
                 element={
@@ -70,9 +69,7 @@ export default function App() {
                   />
                 }
               />
-              {/* // Route
-              is always going to expect a path and an element(as the prop to
-              pass down information) as the naming conventions */}
+
               <Route path="/createevent" element={<CreateEventPage />} />
               <Route
                 path="/:id/edit"

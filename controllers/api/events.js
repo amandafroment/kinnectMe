@@ -15,6 +15,13 @@ async function createEvent(req, res) {
   res.json(event);
 }
 
+async function createComment(req, res) {
+  let event = await Event.findById(req.params.id);
+  event.comments.push(req.body);
+  event.save();
+  res.status(200).json(event);
+}
+
 async function updateEvent(req, res) {
   let updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body);
   res.json(updatedEvent);
@@ -22,14 +29,11 @@ async function updateEvent(req, res) {
 
 async function getDetails(req, res) {
   let id = req.params.id;
-  console.log(req.params.id, "req.params.id events");
   Event.findById(id, function (err, event) {
     res.json(event);
-    console.log(event, "Controller being hit");
   });
 }
 
-// // users past and future events
 async function getAllForUser(req, res) {
   const eventsCreated = await Event.find({ user: req.user._id }).sort();
   const allEvents = await Event.find({});
@@ -41,24 +45,22 @@ async function getAllForUser(req, res) {
       }
     });
   });
-  console.log(eventsAttending);
   res.json([eventsCreated, eventsAttending]);
 }
 
 //  add attendee
 async function eventAddAttendee(req, res) {
   try {
-    console.log(req.body);
     const event = await Event.findById(req.body.eventId);
     if (event.user !== req.user._id) {
       event.addAttendee(req.user._id);
     }
     res.json(event);
   } catch (error) {
-    console.log("error", error);
     res.json(error);
   }
 }
+
 // remove attendee
 async function eventRemoveAttendee(req, res) {
   try {
@@ -78,7 +80,6 @@ async function eventRemoveAttendee(req, res) {
     // event.removeAttendee(req.user._id);
     res.json(event);
   } catch (error) {
-    console.log("error", error);
     res.json(error);
   }
 }
@@ -87,22 +88,6 @@ async function eventRemoveAttendee(req, res) {
 async function deleteEvent(req, res) {
   await Event.findByIdAndDelete(req.params.id);
 }
-
-//
-
-// //create comment
-
-// //edit event
-// // async function updateEvent(req, res) {}
-
-// //edit comment
-// // async function updateComment(req, res) {}
-
-// //delete event
-// // async function deleteEvent(req, res) {}
-
-// //delete comment
-// // async function deleteComment(req, res) {}
 
 module.exports = {
   //   getAll,
@@ -113,5 +98,6 @@ module.exports = {
   eventAddAttendee,
   eventRemoveAttendee,
   delete: deleteEvent,
+  createComment,
   update: updateEvent,
 };

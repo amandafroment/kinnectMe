@@ -28,12 +28,10 @@ export default function EditEventForm({ selectedCategory, event }) {
   async function handleSubmitForm(evt) {
     evt.preventDefault();
     try {
-      console.log("Handle Syubmit form");
       await eventsAPI.updateEvent(formData, event._id);
       setFormData(formData);
       navigate("/");
     } catch (err) {
-      console.log(err);
       setError("Create Event Failed - Try Again");
     }
   }
