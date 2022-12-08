@@ -10,6 +10,20 @@
   flex-direction: column;
 }
 
+.login-form > label {
+  margin-bottom: 10px;
+}
+
+.login-form > input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  border: 2px solid #9aa590;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
 .login-form > .loginbtn {
   color: #9aa590;
   padding: 5px 5px;
@@ -17,9 +31,9 @@
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
-  width: 75%;
   align-self: center;
-  margin: 15px;
+  margin-top: 10px;
+  width: 100px;
 }
 
 .login-form > .loginbtn:hover {

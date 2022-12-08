@@ -1,7 +1,5 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Shadows+Into+Light&display=swap");
-
 
 .FindEventsButtonContainer > button {
   padding: 10px;
@@ -13,7 +11,6 @@
   color: #5c6453;
   font-family: Mulish;
   font-size: 16px;
-
 }
 
 .FindEventsButtonContainer > button:hover {
@@ -34,4 +31,23 @@
 
 .different-event {
   border: 3px solid #889081;
+}
+
+@media only screen and (max-width: 450px) {
+  .FindEventsButtonContainer {
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    margin-top: 5px;
+  }
+
+  .FindEventsButtonContainer > button {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+    color: #5c6453;
+    font-family: Mulish;
+    font-size: 14px;
+  }
 }

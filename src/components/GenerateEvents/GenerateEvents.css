@@ -9,11 +9,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid black;
+  border: 2px solid #bbc3b4;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
   color: #5c6453;
+}
+
+.generate-events-links {
+  color: #5c6453;
+  text-decoration: none;
+}
+
+.generate-events-links:hover {
+  color: #bbc3b4;
 }
 
 .find-event-card > p {
@@ -26,4 +35,42 @@
 
 .bold-header {
   font-weight: bold;
+}
+
+.your-event {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  font-family: "Shadows Into Light";
+}
+
+@media only screen and (max-width: 450px) {
+  .find-events-list {
+    width: 97.5%;
+    margin-top: 5px;
+  }
+
+  .find-event-card {
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    color: #5c6453;
+  }
+
+  .find-event-card > p {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .generate-events-links > h2 {
+    margin: 5px;
+    font-size: 18px;
+  }
+
+  .bold-header {
+    margin-right: 2px;
+  }
 }

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import * as eventsAPI from "../../utilities/events-api";
 
-export default function EventDetailsPage({ event }) {
+export default function EventDetailsPage({ event, user, handleDelete }) {
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
   const [comments, setComments] = useState(event.comments);
@@ -35,6 +35,15 @@ export default function EventDetailsPage({ event }) {
         {comments.map((comment, idx) => {
           return <div key={idx}>{comment.comment}</div>;
         })}
+
+      <Link to={"/" + event._id + "/edit"}>
+        {event.user == user._id && <button>EDIT</button>}
+      </Link>
+      <p>
+        {event.user == user._id && (
+          <button onClick={() => handleDelete(event._id)}>X</button>
+        )}
+      </p>
 
         <h1>Comment Box</h1>
 

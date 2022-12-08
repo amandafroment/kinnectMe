@@ -1,0 +1,85 @@
+.footer-div {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: space-evenly;
+  background-color: white;
+  /* background-image: linear-gradient(white, #cbd4c4); */
+  height: 80px;
+  width: 100%;
+}
+
+.footer-quote {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+
+  width: 100%;
+  font-family: "Shadows Into Light";
+  kerning: 2px;
+  color: #878b82;
+}
+.rumi {
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  color: #8b9086;
+
+  font-size: 15px;
+  width: 100%;
+
+  font-family: "Shadows Into Light";
+}
+
+@media only screen and (max-width: 450px) {
+  .footer-div {
+    position: static;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: flex-end;
+    background-image: linear-gradient(white, #cbd4c4);
+    height: 20%;
+    width: 450px;
+  }
+
+  .footer-quote {
+    position: -webkit-sticky;
+    position: static;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    width: 70%;
+    font-family: "Shadows Into Light";
+    kerning: 2px;
+    color: #878b82;
+    padding: 0px 40px 0px 10px;
+    font-weight: 400;
+  }
+  .rumi {
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    color: #878b82;
+    padding: 0px 40px 0px 10px;
+    font-size: 15px;
+    width: 100%;
+    font-family: "Shadows Into Light";
+    font-weight: 600;
+  }
+}

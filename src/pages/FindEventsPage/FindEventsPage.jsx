@@ -4,9 +4,12 @@ import * as eventsAPI from "../../utilities/events-api";
 import { useEffect, useState } from "react";
 import "./FindEventsPage.css";
 
-
-export default function FindEventsPage({ user, setEvent }) {
-  const [showAllEvents, setShowAllEvents] = useState([]);
+export default function FindEventsPage({
+  user,
+  setEvent,
+  showAllEvents,
+  setShowAllEvents,
+}) {
   const [selectedEvent, setSelectedEvent] = useState("");
 
   useEffect(function () {
@@ -51,7 +54,6 @@ export default function FindEventsPage({ user, setEvent }) {
           setShowAllEvents={setShowAllEvents}
           selectedEvent={selectedEvent}
           setSelectedEvent={setSelectedEvent}
-
           user={user}
         />
       </div>
