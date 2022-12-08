@@ -7,14 +7,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .find-events-page-header {
-  margin-top: 5%;
-
   font-family: "Shadows Into Light";
   font-size: 20px;
   color: #5c6453;
+  margin-top: 0px;
 }
 
 @media only screen and (max-width: 450px) {
