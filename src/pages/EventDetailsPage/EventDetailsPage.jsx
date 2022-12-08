@@ -95,7 +95,7 @@ export default function EventDetailsPage({ event, user, handleDelete }) {
                 value={comment}
                 required
               />
-              <button type="submit">Submit Comment</button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>
