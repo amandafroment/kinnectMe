@@ -72,14 +72,16 @@ export default function MyEvents({
                         <div className="bold-key">Address:</div>{" "}
                         <div className="value">{event.address}</div>
                       </div>
+                    </div>
+                    <div className="card-content">
                       <div className="property">
-                        <div>
+                        <div className="bold-key">
                           <Link
                             to={"/" + event._id}
                             className="generate-events-links"
                             onClick={() => setEvent(event)}
                           >
-                            <div className="bold-key">SEE DETAILS</div>
+                            SEE DETAILS
                           </Link>
                         </div>
                         <div className="value">
@@ -129,26 +131,32 @@ export default function MyEvents({
                         <div className="value">{event.location}</div>
                       </div>
                       <div className="property">
-                        <div className="bold-header">Address:</div>{" "}
+                        <div className="bold-key">Address:</div>{" "}
                         <div className="value">{event.address}</div>
                       </div>
                     </div>
-                    <Link
-                      to={"/" + event._id}
-                      className="generate-events-links"
-                      onClick={() => setEvent(event)}
-                    >
-                      <div className="bold-header">SEE DETAILS</div>
-                    </Link>
-                    <span
-                      className="material-symbols-outlined"
-                      onClick={() => {
-                        eventRemoveAttendee(event._id, user._id);
-                        handleRemoveAttendee(event, user._id);
-                      }}
-                    >
-                      group_remove
-                    </span>
+                    <div className="card-content">
+                      <div className="property">
+                        <div className="bold-key">
+                          <Link
+                            to={"/" + event._id}
+                            className="generate-events-links"
+                            onClick={() => setEvent(event)}
+                          >
+                            SEE DETAILS
+                          </Link>
+                        </div>
+                        <span
+                          className="material-symbols-outlined"
+                          onClick={() => {
+                            eventRemoveAttendee(event._id, user._id);
+                            handleRemoveAttendee(event, user._id);
+                          }}
+                        >
+                          group_remove
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
