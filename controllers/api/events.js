@@ -15,12 +15,12 @@ async function createEvent(req, res) {
   res.json(event);
 }
 
-
 async function createComment(req, res) {
   let event = await Event.findById(req.params.id);
   event.comments.push(req.body);
   event.save();
   res.status(200).json(event);
+}
 
 async function updateEvent(req, res) {
   let updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body);
@@ -33,7 +33,6 @@ async function getDetails(req, res) {
     res.json(event);
   });
 }
-
 
 async function getAllForUser(req, res) {
   const eventsCreated = await Event.find({ user: req.user._id }).sort();
@@ -64,7 +63,7 @@ async function eventAddAttendee(req, res) {
     res.json(error);
   }
 }
-  
+
 // remove attendee
 async function eventRemoveAttendee(req, res) {
   try {
