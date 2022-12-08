@@ -1,11 +1,12 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { eventRemoveAttendee } from "../../utilities/events-api";
+
 
 export default function GenerateEvents({
   showAllEvents,
@@ -16,8 +17,8 @@ export default function GenerateEvents({
 }) {
   const [error, setError] = useState("");
 
+
   async function handleDetails(id) {
-    console.log(id);
     try {
       let detail = await eventsAPI.getDetails(id);
     } catch (err) {

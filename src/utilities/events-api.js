@@ -6,13 +6,16 @@ const BASE_URL = "/api/events";
 export function createAddEvent(formData) {
   return sendRequest(`${BASE_URL}/create`, "POST", formData);
 }
+export async function createComment(comment, id) {
+  // console.log(id, comment);
+  return sendRequest(`${BASE_URL}/${id}/comment`, "POST", comment);
+}
 
 export function getAllEvents(formData) {
   return sendRequest(BASE_URL);
 }
 
 export function getDetails(id) {
-  console.log(id, "from events-api");
   return sendRequest(`${BASE_URL}/${id}`);
 }
 

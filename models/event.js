@@ -35,7 +35,7 @@ const eventSchema = new Schema(
         },
       },
     ],
-    comment: [commentSchema],
+    comments: [commentSchema],
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
