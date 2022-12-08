@@ -17,15 +17,20 @@ async function createEvent(req, res) {
 }
 
 async function createComment(req, res) {
-  console.log("Create Comment Controller being hit");
+  let event = await Event.findById(req.params.id);
+  event.comments.push(req.body);
+  event.save();
+  res.status(200).json(event);
+  // await search.comment.push(req.body.com);
+
+  // console.log(search, "THis is search");
+  // console.log(req.body, "within the controller");
 }
 
 async function getDetails(req, res) {
   let id = req.params.id;
-  console.log(req.params.id, "req.params.id events");
   Event.findById(id, function (err, event) {
     res.json(event);
-    console.log(event, "get Details Controller being hit");
   });
 }
 

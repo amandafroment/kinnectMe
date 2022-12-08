@@ -1,10 +1,9 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as eventsAPI from "../../utilities/events-api";
 import "./GenerateEvents.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
 
 export default function GenerateEvents({
   showAllEvents,
@@ -66,7 +65,7 @@ export default function GenerateEvents({
                     }}
                     to={"/" + event._id}
                   >
-                    <h2 className="bold-header">{event.name.toUpperCase()}</h2>
+                    <h2 className="bold-header">{event.name}</h2>
                     <p>
                       <span className="bold-header">Time & Place:</span>{" "}
                       {event.date}
@@ -86,10 +85,12 @@ export default function GenerateEvents({
                   </Link>
                   <div>
                     {event.attendees.includes(user) ? (
-                      <span class="material-symbols-outlined">person_off</span>
+                      <span className="material-symbols-outlined">
+                        person_off
+                      </span>
                     ) : (
                       <span
-                        class="material-symbols-outlined"
+                        className="material-symbols-outlined"
                         onClick={() => attendingButton(event._id)}
                       >
                         person_add

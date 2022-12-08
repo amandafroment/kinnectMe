@@ -16,8 +16,9 @@ const BASE_URL = "/api/events";
 export function createAddEvent(formData) {
   return sendRequest(`${BASE_URL}/create`, "POST", formData);
 }
-export function createAddComment(comment) {
-  return sendRequest(`${BASE_URL}/comment`, "POST", comment);
+export async function createComment(comment, id) {
+  // console.log(id, comment);
+  return sendRequest(`${BASE_URL}/${id}/comment`, "POST", comment);
 }
 
 export function getAllEvents(formData) {

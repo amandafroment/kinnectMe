@@ -1,28 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import * as eventsAPI from "../../utilities/events-api";
 
 export default function EventDetailsPage({ event }) {
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
+  const [comments, setComments] = useState(event.comments);
 
   async function handleSubmitComment(evt) {
-    console.log("Submit Comment button works");
     evt.preventDefault();
     try {
-      let event = await eventsAPI.createAddComment(comment);
-      console.log(event);
-      setComment(comment);
-      Navigate("/:id");
+      await eventsAPI.createComment({ comment }, event._id);
+      setComments([...comments, { comment }]);
+
+      setComment("");
     } catch (err) {
       console.log(err);
       setError("Adding a comment has failed. Try Again.");
     }
   }
-  function handleChangeForm(evt) {
-    // setComment({ ...comment, [evt.target.name]: evt.target.value });
-    // setError("");
-    console.log(evt);
+
+  function handleChange(evt) {
+    setComment(evt.target.value);
   }
   return (
     <>
@@ -31,12 +30,22 @@ export default function EventDetailsPage({ event }) {
         {event.name}
         {event.category}
         {event.comment}
-      </div>
-      <div>
+        {event._id}
+        {event.details}
+        {comments.map((comment) => {
+          return <div>{comment.comment}</div>;
+        })}
+
         <h1>Comment Box</h1>
-        <form onSubmit={handleSubmitComment}>
+
+        <form onSubmit={(evt) => handleSubmitComment(evt)}>
           <label>Enter Comment Here:</label>
-          <input type="text" name="comment" onChange={handleChangeForm} />
+          <input
+            type="text"
+            name="comment"
+            onChange={handleChange}
+            value={comment}
+          />
           <button type="submit">Submit Comment</button>
         </form>
       </div>
