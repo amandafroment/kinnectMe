@@ -70,8 +70,12 @@ export default function GenerateEvents({
                   <h2 className="bold-header">{event.name.toUpperCase()}</h2>
                 </Link>
                 <p>
-                  <span className="bold-header">Time & Place:</span>{" "}
-                  {event.date}
+                  <span className="bold-header">Place:</span>{" "}
+                  {event.date.slice(0, 10)}
+                </p>
+                <p>
+                  <span className="bold-header">Time:</span>{" "}
+                  {event.date.slice(11, 19)}
                 </p>
                 <p>
                   <span className="bold-header">Location:</span>{" "}
