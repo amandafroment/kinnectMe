@@ -81,7 +81,6 @@ export default function App() {
         ) : (
           <>
             <AuthPage setUser={setUser} />
-            <Footer />
           </>
         )}
       </main>
