@@ -40,7 +40,7 @@ export default function GenerateEvents({
     <>
       <div className="find-events-list">
         <div>
-          {showAllEvents.map((event) => {
+          {showAllEvents.map((event, idx) => {
             const isAttending = event.attendees.findIndex((element) => {
               if (element._id === user) {
                 return true;
@@ -49,7 +49,7 @@ export default function GenerateEvents({
             });
             console.log(event.attendees.includes({ _id: user }));
             return (
-              <div className="find-event-card" key={event._id}>
+              <div className="find-event-card" key={idx}>
                 <Link
                   onClick={() => {
                     handleDetails(event._id);

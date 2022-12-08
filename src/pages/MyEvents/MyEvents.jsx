@@ -50,24 +50,24 @@ export default function MyEvents({ user, setEvent }) {
                     </Link>
                     <div className="card-content">
                       <div className="property">
-                        <div className="bold-key">Date:</div>{" "}
+                        <div className="bold-key">Date:</div>
                         <div className="value">{event.date.slice(0, 10)}</div>
                       </div>
                       <div className="property">
-                        <div className="bold-key">Time:</div>{" "}
+                        <div className="bold-key">Time:</div>
                         <div className="value">{event.date.slice(11, 19)}</div>
                       </div>
                       <div className="property">
                         <div className="bold-key">Location:</div>{" "}
                         <div className="value">{event.location}</div>
                       </div>
-                      <div className="property">
-                        <div className="bold-key">Address:</div>{" "}
-                        <div className="value">{event.address}</div>
+                      <div className="property-address">
+                        <div className="bold-key-address">Address:</div>{" "}
+                        <div className="value-address">{event.address}</div>
                       </div>
                     </div>
                     <div className="card-content">
-                      <div className="property">
+                      <div className="property-details">
                         <div className="bold-key">
                           <Link
                             to={"/" + event._id}
@@ -106,9 +106,7 @@ export default function MyEvents({ user, setEvent }) {
                       className="generate-events-links"
                       onClick={() => setEvent(event)}
                     >
-                      <div className="bold-key-attending">
-                        {event.name.toUpperCase()}
-                      </div>
+                      <h2 className="bold">{event.name.toUpperCase()}</h2>
                     </Link>
                     <div className="card-content">
                       <div className="property">
@@ -123,13 +121,13 @@ export default function MyEvents({ user, setEvent }) {
                         <div className="bold-key">Location:</div>{" "}
                         <div className="value">{event.location}</div>
                       </div>
-                      <div className="property">
-                        <div className="bold-key">Address:</div>{" "}
-                        <div className="value">{event.address}</div>
+                      <div className="property-address">
+                        <div className="bold-key-address">Address:</div>{" "}
+                        <div className="value-address">{event.address}</div>
                       </div>
                     </div>
                     <div className="card-content">
-                      <div className="property">
+                      <div className="property-details">
                         <div className="bold-key">
                           <Link
                             to={"/" + event._id}
