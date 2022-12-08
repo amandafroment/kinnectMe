@@ -26,7 +26,7 @@ export default function GenerateEvents({
       console.log(event.attendees);
     }
     event.attendees.push({ _id: user._id });
-    setShowAllEvents([...showAllEvents, event]);
+    setShowAllEvents([...showAllEvents]);
     eventsAPI.eventAddAttendee(eventId);
   }
 
@@ -34,13 +34,13 @@ export default function GenerateEvents({
     event.attendees = event.attendees.filter(
       (attendee) => attendee._id !== attendeeId
     );
-    setShowAllEvents([...showAllEvents, event]);
+    setShowAllEvents([...showAllEvents]);
   }
   return (
     <>
       <div className="find-events-list">
         <div>
-          {showAllEvents.map((event) => {
+          {showAllEvents.map((event, idx) => {
             const isAttending = event.attendees.findIndex((element) => {
               if (element._id === user) {
                 return true;
@@ -49,7 +49,7 @@ export default function GenerateEvents({
             });
             console.log(event.attendees.includes({ _id: user }));
             return (
-              <div className="find-event-card" key={event._id}>
+              <div className="find-event-card" key={idx}>
                 <Link
                   onClick={() => {
                     handleDetails(event._id);
