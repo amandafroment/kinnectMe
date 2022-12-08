@@ -87,7 +87,7 @@ export default function GenerateEvents({
                   <span className="bold-header">All The Details: </span>{" "}
                   {event.details}
                 </p>
-                <div>
+                <p className="your-event">
                   {event.user == user._id ? (
                     <div className="your-event">
                       <span className="your">Your </span>
@@ -120,7 +120,7 @@ export default function GenerateEvents({
                       )}
                     </>
                   )}
-                </div>
+                </p>
               </div>
             );
           })}

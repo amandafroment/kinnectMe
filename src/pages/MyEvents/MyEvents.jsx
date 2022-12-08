@@ -53,7 +53,7 @@ export default function MyEvents({
                       className="generate-events-links"
                       onClick={() => setEvent(event)}
                     >
-                      <h2 className="bold-key">{event.name.toUpperCase()}</h2>
+                      <h2 className="bold">{event.name.toUpperCase()}</h2>
                     </Link>
                     <div className="card-content">
                       <div className="property">
