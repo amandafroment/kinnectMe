@@ -3,9 +3,38 @@
   position: sticky;
   bottom: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: space-evenly;
+  background-image: linear-gradient(white, #e4ecdc);
+  height: 80px;
+  width: 100%;
+}
+
+.footer-quote {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  border-top: 2px rgb(170, 180, 161) solid;
-  height: 50px;
-  width: 97%;
+  align-items: center;
+  font-size: 17px;
+
+  width: 100%;
+  font-family: "Shadows Into Light";
+  kerning: 2px;
+  color: #878b82;
+}
+.rumi {
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  color: #8b9086;
+
+  font-size: 15px;
+  width: 100%;
+
+  font-family: "Shadows Into Light";
 }

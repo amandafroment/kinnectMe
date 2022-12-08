@@ -6,8 +6,11 @@ export default function Footer() {
     <>
       <div className="footer-div">
         <div className="footer-quote">
-          “Set your life on fire. Seek those who fan your flames.”
+          “Out beyond ideas of wrongdoing and rightdoing there is a field. I'll
+          meet you there. When the soul lies down in that grass the world is too
+          full to talk about.”
         </div>
+        <div className="rumi"> ~ Rumi </div>
       </div>
     </>
   );
