@@ -36,6 +36,9 @@
 .bold-header {
   font-weight: bold;
 }
+.property1 {
+  margin-right: 20px;
+}
 
 .your-event {
   display: flex;
@@ -45,6 +48,7 @@
   align-content: center;
   align-self: center;
   font-family: "Shadows Into Light";
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 450px) {
@@ -72,5 +76,13 @@
 
   .bold-header {
     margin-right: 2px;
+  }
+
+  .your-event {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    font-family: "Shadows Into Light";
+    font-weight: 500;
   }
 }

@@ -97,7 +97,6 @@
   flex-flow: column wrap;
   padding-top: 0px;
   margin-left: 10px;
-
   padding: 0px 15px 0px 15px;
 }
 
@@ -142,7 +141,6 @@
   align-items: center;
   align-content: center;
   align-self: center;
-  font-weight: bold;
   font-family: "Shadows Into Light";
 }
 
@@ -154,7 +152,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .user-events-page-header {
     margin-top: 5%;
     font-family: "Shadows Into Light";
@@ -167,6 +164,7 @@
     flex-direction: column;
     width: 100%;
   }
+
   .created-list-container {
     display: flex;
     flex-direction: column;
@@ -240,15 +238,23 @@
     height: 250px;
     width: 77%;
   }
-
   .card-content {
     display: flex;
-    flex-direction: column;
     flex-flow: column wrap;
     padding-top: 0px;
-    margin-left: 15px;
-    flex-grow: 100%;
-    padding: 0px 20px 0px 20px;
+    margin-left: 0;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .property {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+    max-width: 80%;
+    justify-content: space-between;
+    justify-self: flex-end;
   }
 
   .property {
@@ -261,11 +267,23 @@
     justify-content: space-between;
     justify-self: flex-end;
   }
-
   .bold-key {
     margin: 0;
     font-weight: bold;
+  }
+
+  .bold-key {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
     width: 45%;
+  }
+  .bold-key-attending {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
   }
   .bold-key-attending {
     margin: 0;

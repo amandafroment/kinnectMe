@@ -8,7 +8,7 @@
   justify-items: center;
   align-content: space-evenly;
   background-color: white;
-  /* background-image: linear-gradient(white, #cbd4c4); */
+  background-image: linear-gradient(white, #cbd4c4);
   height: 80px;
   width: 100%;
 }
@@ -56,7 +56,7 @@
   }
 
   .footer-quote {
-    position: -webkit-sticky;
+    position: -webkit-static;
     position: static;
     bottom: 0;
     display: flex;
