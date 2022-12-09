@@ -15,7 +15,17 @@ Description of the app.
 ## Skills Used 
 
 
+<li> MongoDb
+<li> Mongoose
+<li> Express
+<li> React
+<li> Node.js
+<li> Axios
+
+
 ## Screenshots 
+
+
 
 ## Demo 
 
@@ -27,7 +37,7 @@ Coming soon!!
 
 ## Project Link 
 
-[Click Here!]()
+[Click Here!](https://kinnectme.herokuapp.com/)
 
 ## Other Links
 
