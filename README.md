@@ -89,4 +89,4 @@ Coming soon!!
 
 [Trello Board](https://trello.com/b/27LwwkwG/react-group-4#)
 
-<img src="public/quote.png" height="200">
+<img src="public/quote.png" height="100">
