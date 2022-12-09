@@ -37,15 +37,36 @@ Let's kinnect.
 
 ## Screenshots
 
-<img src="public/"  width="300">
+Log-in + Sign up;
+<img src="public/loginmobile.png" width="300"><img src="public/Logindesktop.png" width=700">
 
-<img src="main_app/static/css/images/logo.png" width="300">
+Find Events:
+<img src="public/FindEventsMobile.png" width="300"><img src="public/FindEventsDesk.png" width="600">
 
-## Demo 
+Create an event:
+<img src="public/CreateEventMobile.png" width="300"><img src="public/CreateEventForm.png" width="600">
 
-[Entity Relationship Diagram (ERD)](https://app.diagrams.net/#LERD%20for%20project%204)
+My Events:
+<img src="public/MyEventsMobile.png" width="300"><img src="public/Myeventsdesktop.png" width="600"><img src="public/AttendingEventsMobile.png" width="300">
+
+Event Details Page:
+<img src="public/EditMobile.png" width="300"><img src="public/EditEvent.png" width="600"><img src="public/CommentMobile.png" width="300">
+
+## Demo
+
+Coming soon!!
+
+[Application Demo Video]()
 
 ## Future Enhancements (Icebox Items)
+
+AAU, I would like to be able to see comments or a chat for each event in real time
+AAU, I want to be able to search for events based on location or the name of the event
+AAU, I would like to invite other friends to my event through email or username
+Implementing Geocodio to match addresses for our locations/addresses of our events
+Implementing Google API for autocomplete for the locations/addresses of our events
+Implementing a web socket for the chat feature or comments in real time
+Adding to our event/user component to show past events on the MyEvents page
 
 ## Other Links
 
