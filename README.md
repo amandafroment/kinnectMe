@@ -32,7 +32,7 @@ Let's kinnect.
 
 ## Entity Relationship Diagram
 
-<img src="public/ERD.png"  height=400">
+<img src="public/ERD.png"  height="400">
 
 ## Screenshots
 
