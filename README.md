@@ -6,7 +6,6 @@ Once you are signed up and loggin in, you will be able to attended events alread
 
 Let's kinnect.
 
-
 ## Try it out!
 
 [Click Here!](https://kinnectme.herokuapp.com/)
@@ -18,8 +17,7 @@ Let's kinnect.
 - [@rasl76](https://github.com/rasl76)
 - [@donaldyang17](https://github.com/donaldyang17)
 
-<img src="public/Amanda.png" height="200" heighe> <img src="public/Donald.jpg" height="200"> <img src="public/Nick.jpg" height="200">
-
+<img src="public/Amanda.png" height="150" heighe> <img src="public/Donald.jpg" height="150"> <img src="public/Nick.jpg" height="150"> <img src="public/Renee.jpg" height="150">
 
 ## Skills Used
 
@@ -39,19 +37,19 @@ Let's kinnect.
 Log-in + Sign up;
 <br>
 <br>
-<img src="public/loginmobile.png" height="300">  <img src="public/Logindesktop.png" height="300">
+<img src="public/loginmobile.png" height="300"> <img src="public/Logindesktop.png" height="300">
 <br>
 <br>
 Find Events
 <br>
 <br>
-<img src="public/FindEventsMobile.png" height="300">  <img src="public/FindEventsDesk.png" height="300">
+<img src="public/FindEventsMobile.png" height="300"> <img src="public/FindEventsDesk.png" height="300">
 <br>
 <br>
 Create an event:
 <br>
 <br>
-<img src="public/CreateEventMobile.png" height="300">  <img src="public/CreateEventForm.png" height="300">
+<img src="public/CreateEventMobile.png" height="300"> <img src="public/CreateEventForm.png" height="300">
 <br>
 <br>
 <br>
@@ -65,7 +63,7 @@ My Events:
 Event Details Page:
 <br>
 <br>
-<img src="public/EditMobile.png" height="300"> <img src="public/EditEvent.png" height="300">  <img src="public/CommentMobile.png" height="300">  
+<img src="public/EditMobile.png" height="300"> <img src="public/EditEvent.png" height="300"> <img src="public/CommentMobile.png" height="300">  
 <br>
 <br>
 <br>
@@ -85,6 +83,7 @@ Coming soon!!
 <li> Implementing Google API for autocomplete for the locations/addresses of our events
 <li> Implementing a web socket for the chat feature or comments in real time
 <li> Adding to our event/user component to show past events on the MyEvents page
+<li> AAU I would like to know who the creator of an event is and be able to see other events they have created I might want to attend.
 
 ## Other Links
 
