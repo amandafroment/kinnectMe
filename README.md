@@ -33,7 +33,7 @@ Coming soon!!
 
 [Trello Board](https://trello.com/b/27LwwkwG/react-group-4#)
 
-[Entity Relationship Diagram (ERD)]()
+[Entity Relationship Diagram (ERD)](https://app.diagrams.net/#LERD%20for%20project%204)
 
 
 
