@@ -41,11 +41,9 @@ Let's kinnect.
 
 <img src="main_app/static/css/images/logo.png" width="300">
 
-## Demo
+## Demo 
 
-Coming soon!!
-
-[Application Demo Video]()
+[Entity Relationship Diagram (ERD)](https://app.diagrams.net/#LERD%20for%20project%204)
 
 ## Future Enhancements (Icebox Items)
 
