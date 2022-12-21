@@ -1,12 +1,10 @@
 # kinnectMe
 
-kinnectMe, a self-care through social connectivity mobile and web application, is an online directory of user created events, where users can find one another through shared interests.
+kinnectMe is an online directory of user created events, where users can connect with others through shared events. Once a user signs up and logs in to the app, they will be able to attend events that are created by other users in their area, or they can create their own events for other users to attend. Those who want to know more about an event can comment on the event details page to connect with the creator of the event, as well as others who are planning on attending.
 
-Once you are signed up and loggin in, you will be able to attended events already created by other users, and create your own events for other users to attend. Users are able to ask questions and get answers through a comment feature.
+The goal when creating kinnectMe was to promote self-care by creating an online environment of social connectivity through shared interests. When you log on to the application, you will be greeted with a calming front-end design, which was purposefully done to match the overall theme and goal of the project. 
 
-Let's kinnect.
-
-## Try it out!
+## Let's Kinnect!
 
 [Click Here!](https://kinnectme.herokuapp.com/)
 
